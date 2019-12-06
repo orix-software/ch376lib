@@ -1,11 +1,11 @@
-
+.importzp ptr1
 
 ;@set filename, input : A and Y adress of the string, terminated by 0
 ; If the set is successful, then A contains 0
 .proc _ch376_set_file_name
     lda     ptr1
     sty     ptr1+1
-    
+
     lda     #CH376_SET_FILE_NAME        ;$2f
     sta     CH376_COMMAND
     ldx     #$00
