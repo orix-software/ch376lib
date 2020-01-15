@@ -18,7 +18,6 @@ loop:
     bcs     skip
     sbc     #$1F
 skip:
-   ; sta $bb80,x
     sta     CH376_DATA
     inx
     cpx     #13                         ; because we don't manage longfilename shortname =13 8+3 and dot and \0

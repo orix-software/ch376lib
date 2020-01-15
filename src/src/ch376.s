@@ -153,8 +153,6 @@ loop:
     sta     CH376_DATA	
     rts
 .endproc    
-
-
 	
 .proc _ch376_disk_mount
     lda     #CH376_DISK_MOUNT
@@ -163,7 +161,6 @@ loop:
     ; if we read data value, we have then length of the volume name
     rts	
 .endproc
-
 
 str_usbdrive_controller_not_found:
 	.byte "Usb drive controller not found !",$0D,$0A,0
