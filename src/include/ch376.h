@@ -15,7 +15,9 @@
 // Commands
 #define CH376_CMD_NONE          0x00
 #define CH376_CMD_GET_IC_VER    0x01
+#define CH376_CMD_SET_USB_SPEED 0x04
 #define CH376_CMD_CHECK_EXIST   0x06
+#define CH376_CMD_GET_DEV_RATE  0x0A
 #define CH376_CMD_GET_FILE_SIZE 0x0C
 #define CH376_CMD_SET_USB_MODE  0x15
 #define CH376_CMD_GET_STATUS    0x22
@@ -33,6 +35,8 @@
 #define CH376_CMD_BYTE_WRITE    0x3c
 #define CH376_CMD_BYTE_WR_GO    0x3d
 #define CH376_CMD_DISK_QUERY    0x3f
+#define CH376_CMD_GET_DESCR     0X42
+#define CH376_CMD_SET_ADDR      0X45
 #define CH376_CMD_DISK_RD_GO    0x55
 
 #define CH376_ARG_SET_USB_MODE_INVALID       0x00
