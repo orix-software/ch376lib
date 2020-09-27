@@ -1,3 +1,9 @@
+
+.include "telestrat.inc"
+.include "include/ch376.inc"
+
+.export _ch376_wait_response
+
 .proc _ch376_wait_response
 ; 1 return 1 if usb controller does not respond
 ; else A contains answer of the controller

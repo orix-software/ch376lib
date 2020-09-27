@@ -95,9 +95,6 @@
     rts
 .endproc
 
- 
-
-
 .proc _ch376_get_file_size
     lda     #CH376_GET_FILE_SIZE
     sta     CH376_COMMAND
