@@ -1,3 +1,12 @@
+
+.include "telestrat.inc"
+.include "include/ch376.inc"
+
+.export _ch376_set_bytes_read
+.export _ch376_set_bytes_write
+
+.import _ch376_wait_response
+
 _ch376_set_bytes_read:
     ; A and Y contains number of bytes to read
     ldx     #CH376_BYTE_READ
@@ -17,5 +26,4 @@ _ch376_set_bytes_write:
     sta     CH376_DATA
     sta     CH376_DATA
 .endif	
-    jsr     _ch376_wait_response
-    rts
+    jmp     _ch376_wait_response

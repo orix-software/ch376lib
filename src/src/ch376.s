@@ -57,6 +57,7 @@
     sta     CH376_COMMAND
     jsr     _ch376_wait_response
     rts
+.endproc    
 
 ; A contains 0 if it needs to update length
 .proc _ch376_file_close
