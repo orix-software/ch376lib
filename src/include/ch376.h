@@ -64,13 +64,15 @@
 #define CH376_INT_DISK_READ  0x1d
 #define CH376_INT_DISK_WRITE 0x1e
 
-
+#define CH376_LIB_VERSION_2021_2 0x00
 
 unsigned char ch376_check_exist(void);
 unsigned char ch376_ic_get_version(void);
 void 		  ch376_set_usb_mode(unsigned char mode);
 unsigned char ch376_disk_mount(void);
 unsigned int  ch376_seek_file(int position);// 16 bytes
+
+unsigned char ch376_lib_version(void);
 
 unsigned int  ch376_file_get_info(void);
 
