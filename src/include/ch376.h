@@ -47,14 +47,14 @@
 // Status & errors
 #define CH376_ERR_OPEN_DIR      0x41
 #define CH376_ERR_MISS_FILE     0x42
-#define CH376_ERR_FOUND_NAME 		0x43
+#define CH376_ERR_FOUND_NAME 	0x43
 #define CH376_ERR_DISK_DISCON 	0x82
 #define CH376_ERR_LARGE_SECTOR 	0x84
-#define CH376_ERR_TYPE_ERROR 		0x92
-#define CH376_ERR_BPB_ERROR 		0xA1
-#define CH376_ERR_DISK_FULL 		0xB1
-#define CH376_ERR_FDT_OVER 			0xB2
-#define CH376_ERR_FILE_CLOSE 		0xB4
+#define CH376_ERR_TYPE_ERROR 	0x92
+#define CH376_ERR_BPB_ERROR 	0xA1
+#define CH376_ERR_DISK_FULL 	0xB1
+#define CH376_ERR_FDT_OVER 		0xB2
+#define CH376_ERR_FILE_CLOSE 	0xB4
 
 
 #define CH376_RET_SUCCESS 0x51
@@ -64,13 +64,15 @@
 #define CH376_INT_DISK_READ  0x1d
 #define CH376_INT_DISK_WRITE 0x1e
 
+#define CH376_LIB_VERSION_2021_2 0x00
 
-
-unsigned char ch376_check_exist(unsigned char value);
+unsigned char ch376_check_exist(void);
 unsigned char ch376_ic_get_version(void);
-void 		  ch376_set_usb_mode(unsigned char value);
+void 		  ch376_set_usb_mode(unsigned char mode);
 unsigned char ch376_disk_mount(void);
 unsigned int  ch376_seek_file(int position);// 16 bytes
+
+unsigned char ch376_lib_version(void);
 
 unsigned int  ch376_file_get_info(void);
 
@@ -82,16 +84,9 @@ unsigned char ch376_file_create();
 unsigned char ch376_dir_create();
 unsigned char ch376_file_erase();
 // file_close return results of file_close
-unsigned char ch376_file_close(unsigned char value);
-unsigned char ch376_rd_usb_data0(void);
-void          ch376_get_entry(char *);
-void          ch376_process_next_entry_catalog(void);
-
-unsigned char ch376_write(void *ptr);
-/*High level function*/
+unsigned char ch376_file_close();
 
 
-unsigned char  	ch376_fwrite(void *ptr,int number);
 
 
 

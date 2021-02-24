@@ -1,4 +1,10 @@
+
+.include "telestrat.inc"
+.include "include/ch376.inc"
+
 .importzp ptr1
+
+.export _ch376_set_file_name
 
 ;@set filename, input : A and Y adress of the string, terminated by 0
 ; If the set is successful, then A contains 0
