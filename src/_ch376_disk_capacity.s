@@ -13,7 +13,7 @@
     sta     CH376_COMMAND
     jsr     _ch376_wait_response
     
-    lda     CH376_RD_USB_DATA0
+    lda     #CH376_RD_USB_DATA0
     sta     CH376_COMMAND
     
     ldy     #$00
