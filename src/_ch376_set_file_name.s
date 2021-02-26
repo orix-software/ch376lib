@@ -14,7 +14,7 @@
 
     lda     #CH376_SET_FILE_NAME        ;$2F
     sta     CH376_COMMAND
-    ldx     #$0y
+    ldy     #$00
 loop:	
     lda     (ptr1),y
     beq     end                         ; we reached 0 value
