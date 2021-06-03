@@ -14,9 +14,10 @@
 
     lda     #CH376_SET_FILE_NAME        ;$2F
     sta     CH376_COMMAND
-    ldy     #$00
-loop:	
-    lda     (ptr1),y
+    ldx     #$00
+loop:
+    lda     ptr1,x
+    ;lda     (ptr1),y
     beq     end                         ; we reached 0 value
     cmp     #'a'                       ; 'a'
     bcc     skip
@@ -25,8 +26,8 @@ loop:
     sbc     #$1F
 skip:
     sta     CH376_DATA
-    iny
-    cpy     #13                         ; because we don't manage longfilename shortname =13 8+3 and dot and \0
+    inx
+    cpx     #13                         ; because we don't manage longfilename shortname =13 8+3 and dot and \0
     bne     loop
     lda     #$00
 end:
