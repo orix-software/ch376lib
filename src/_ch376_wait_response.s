@@ -20,8 +20,9 @@ loop3:
     dey
     bne     loop3
 	; error is here
-    lda     #$01 
+    lda     #$01
     rts
+
 no_error:
     lda     #CH376_GET_STATUS
     sta     CH376_COMMAND
@@ -29,4 +30,4 @@ no_error:
     rts
 good_message:
     rts
-.endproc    
+.endproc

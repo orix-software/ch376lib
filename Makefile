@@ -16,6 +16,7 @@ else
         AR = $(CC65_HOME)/bin/ar65
 endif
 
+VERSION=$(cat VERSION)
 
 all: $(SOURCES8) $(OBJECTS8) build
 
@@ -30,9 +31,12 @@ build:
 	@mkdir build/lib8/ -p
 	@mkdir build/usr/include/ -p
 	@mkdir build/usr/arch/include/ -p
+	@mkdir build/usr/src/ch376lib/$(VERSION)/arch/ -p
 	cp ch376.lib build/lib8/
 	cp src/include/ch376.h build/usr/include
 	cp src/include/ch376.inc build/usr/arch/include
+	cp src/*.s build/usr/src/ch376lib/$(VERSION)/arch/
+
 
 
 clean:
