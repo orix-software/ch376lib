@@ -15,14 +15,14 @@
     sta     CH376_DATA
     sty     CH376_DATA
 .IFPC02
-.pc02      
+.pc02
     stz     CH376_DATA
     stz     CH376_DATA
-.p02    
-.else	
+.p02
+.else
     lda     #$00
     sta     CH376_DATA
     sta     CH376_DATA
-.endif	
+.endif
     jmp     _ch376_wait_response
 .endproc

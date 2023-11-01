@@ -15,8 +15,9 @@
     lda     #CH376_SET_FILE_NAME        ;$2F
     sta     CH376_COMMAND
     ldx     #$00
-loop:	
-    lda     ptr1,x      
+loop:
+    lda     ptr1,x
+    ;lda     (ptr1),y
     beq     end                         ; we reached 0 value
     cmp     #'a'                       ; 'a'
     bcc     skip
@@ -32,4 +33,4 @@ skip:
 end:
     sta     CH376_DATA
     rts
-.endproc   
+.endproc
