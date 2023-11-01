@@ -10,4 +10,4 @@
     lda     #CH376_FILE_ERASE
     sta     CH376_COMMAND
     jmp     _ch376_wait_response
-.endproc    
+.endproc

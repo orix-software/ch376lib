@@ -24,5 +24,5 @@
     iny
     lda     CH376_DATA
     sta     (ptr1),y
-    rts	
+    rts
 .endproc

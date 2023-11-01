@@ -2,20 +2,26 @@ CH376_LIB_VERSION_2023_4 = $00
 
 CH376_DETECTED        = $AA
 
-CH376_CMD_NONE        = $00
+CH376_NONE        = $00
 CH376_GET_IC_VER      = $01
 CH376_SET_BAUDRATE    = $02
 CH376_GET_ENTER_SLEEP = $03
 CH276_SET_USB_SPEED   = $04
 CH376_RESET_ALL       = $05
 CH376_CHECK_EXIST     = $06
-CH376_SET_REGISTER    = $0B
 CH376_GET_REGISTER    = $0A
+CH376_GET_DEV_RATE    = $0A
+CH376_SET_REGISTER    = $0B
+CH376_SET_SD0         = $0B
+CH376_WRITE_VAR8      = $0B
 CH376_GET_FILE_SIZE   = $0C ; Get the current file length
+CH376_READ_VAR32      = $0C
+CH376_WRITE_VAR32     = $0D
 CH376_DELAY_100US     = $0F
 CH376_SET_USB_ADDR    = $13
 CH376_SET_USB_MODE    = $15
 CH376_TEST_CONNECT    = $16
+CH376_ABORT_NAK       = $17
 CH376_SET_EP0_RX      = $18
 CH376_SET_EP0_TX      = $19
 CH376_SET_EP1_RX      = $1A
@@ -24,13 +30,15 @@ CH376_SET_EP2_RX      = $1C
 CH376_SET_EP2_TX      = $1D
 CH376_GET_STATUS      = $22
 CH376_UNLOCK_USB      = $23 ; From CH375 datasheet
+CH376_DIRTY_BUFFER    = $25
 CH376_RD_USB_DATA0    = $27
 CH376_RD_USB_DATA_UNLOCK = $28 ; From CH375 datasheet
 CH376_WR_EP0          = $29 ; DATA3
 CH376_WR_EP1          = $2A ; DATA5
 CH376_WR_EP2          = $2B ; DATA7
 CH376_WR_USB_DATA     = $2C
-CH376_CMD_WR_REQ_DATA = $2D
+CH376_WR_REQ_DATA     = $2D
+CH376_OFS_DATA        = $2E
 CH376_SET_FILE_NAME   = $2F
 CH376_DISK_CONNECT    = $30 ; check the disk connection status
 CH376_DISK_MOUNT      = $31
@@ -40,6 +48,7 @@ CH376_CMD_FILE_CREATE = $34
 CH376_FILE_ERASE      = $35
 CH376_FILE_CLOSE      = $36
 CH376_DIR_INFO_READ   = $37
+CH376_DIR_INFO_SAVE   = $38
 CH376_BYTE_LOCATE     = $39
 CH376_BYTE_READ       = $3A
 CH376_BYTE_RD_GO      = $3B
@@ -49,10 +58,28 @@ CH376_DISK_CAPACITY   = $3E
 CH376_DISK_QUERY      = $3F
 CH376_DIR_CREATE      = $40
 CH376_CLR_STALL       = $41
+CH376_CMD_GET_DESCR   = $42
 CH376_SET_ADRESS      = $45
 CH376_GET_DESCR       = $46
-CH376_ISSUE_TKN_X     = $4E
+CH376_SET_CONFIG      = $49 ; Set USB configuration
+CH376_SEC_READ        = $4B
+CH376_SEC_WRITE       = $4C
+CH376_AUTO_SETUP      = $4D
+CH376_ISSUE_TKN_X     = $4E ; Send synchronization token and execute transactions
+CH376_DISC_BOC        = $50
+CH376_DISK_INIT       = $51 ; Init USB memory
+CH376_DISK_RESET      = $52
+CH376_DISK_SIZE       = $53 ; Get The maximum capacity of the USB memory
+CH376_DISC_READ       = $54
 CH376_DISK_RD_GO      = $55
+CH376_DISK_WRITE      = $56
+CH376_DISK_WR_GO      = $57
+CH376_DISK_INQUIRY    = $58
+CH376_DISK_READY      = $59
+CH376_DISK_R_SENSE    = $5A
+CH376_RD_DISK_SEC     = $5B
+CH376_WR_DISK_SEC     = $5C
+CH376_DISK_MAX_LUN    = $5D
 
 ; CODE FOR CH376_SET_USB_MODE
 
@@ -63,6 +90,17 @@ CH376_SET_USB_MODE_CODE_SDCARD                              = $03
 ; The code of 06H means switch to valid USB-HOST, produce SOF package automatically.
 CH376_SET_USB_MODE_CODE_USB_HOST_SOF_PACKAGE_AUTOMATICALLY  = $06
 CH376_USB_MODE_HOST_RESET                                   = $07
+
+CH376_ERR_OPEN_DIR          = $41
+CH376_ERR_MISS_FILE         = $42
+CH376_ERR_FOUND_NAME 		= $43
+CH376_ERR_DISK_DISCON 	    = $82
+CH376_ERR_LARGE_SECTOR 	    = $84
+CH376_ERR_TYPE_ERROR 		= $92
+CH376_ERR_BPB_ERROR 		= $A1
+CH376_ERR_DISK_FULL 		= $B1
+CH376_ERR_FDT_OVER 	  	    = $B2
+CH376_ERR_FILE_CLOSE 		= $B4
 
 
 CH376_USB_INT_SUCCESS 		= $14
@@ -77,16 +115,7 @@ CH376_USB_INT_DISK_ERR 		= $1F
 CH376_ST_RET_SUCCESS        = $51
 CH376_ST_RET_ABORT          = $5F
 
-CH376_ERR_OPEN_DIR          = $41
-CH376_ERR_MISS_FILE         = $42
-CH376_ERR_FOUND_NAME 		= $43
-CH376_ERR_DISK_DISCON 	    = $82
-CH376_ERR_LARGE_SECTOR 	    = $84
-CH376_ERR_TYPE_ERROR 		= $92
-CH376_ERR_BPB_ERROR 		= $A1
-CH376_ERR_DISK_FULL 		= $B1
-CH376_ERR_FDT_OVER 	  	    = $B2
-CH376_ERR_FILE_CLOSE 		= $B4
+
 
 ; / * Informations de base du système actuel * /
 ; / * Le bit 6 est utilisé pour indiquer la sous-classe du périphérique de stockage USB SubClass-Code, le bit 6 est 0 pour indiquer que la sous-classe est 6 et le bit 6 est 1 pour indiquer que la sous-classe est différente de 6 * /

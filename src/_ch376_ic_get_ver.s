@@ -10,4 +10,4 @@
     and     #%00111111 ; A contains revision
 
     rts
-.endproc    
+.endproc

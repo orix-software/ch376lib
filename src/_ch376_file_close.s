@@ -11,12 +11,12 @@
     ldx     #CH376_FILE_CLOSE
     stx     CH376_COMMAND
 .IFPC02
-.pc02    
+.pc02
     stz     CH376_DATA
-.p02    
+.p02
 .else
     lda     #$00
     sta     CH376_DATA
-.endif    
+.endif
     jmp     _ch376_wait_response
-.endproc   
+.endproc

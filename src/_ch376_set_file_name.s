@@ -33,4 +33,4 @@ skip:
 end:
     sta     CH376_DATA
     rts
-.endproc   
+.endproc

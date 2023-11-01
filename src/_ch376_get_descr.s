@@ -11,4 +11,4 @@
     stx     CH376_COMMAND
     sta     CH376_DATA
     jmp     _ch376_wait_response
-.endproc    
+.endproc

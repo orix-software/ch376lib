@@ -2,12 +2,10 @@
 .include "telestrat.inc"
 .include "include/ch376.inc"
 
-
 .export _ch376_reset_all
 
-
 .proc _ch376_reset_all
-    lda     #CH376_RESET_ALL ; 5 
+    lda     #CH376_RESET_ALL ; 5
     sta     CH376_COMMAND
 	; waiting
     ldy     #$00
@@ -19,5 +17,4 @@ loop:
     iny
     bne     loop
     rts
-.endproc    
-	
+.endproc
