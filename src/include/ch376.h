@@ -222,6 +222,6 @@ unsigned char ch376_wait_response(void);
 void ch376_set_usb_speed(unsigned char speed);
 void ch376_set_usb_addr(unsigned char adress);
 void ch376_set_address(unsigned char adress);
-void ch376_get_descr(unsigned char mode);
+unsigned char ch376_get_descr(unsigned char mode);
 void ch376_set_config(unsigned char config);
 
