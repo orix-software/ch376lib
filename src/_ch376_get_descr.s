@@ -6,8 +6,8 @@
 .export _ch376_get_descr
 
 .proc _ch376_get_descr
-    ; Get A : data to send
-    ldx     #CH376_GET_DESCR
+    ; Get A : type descriptor or config
+    ldx     #CH376_CMD_GET_DESCR
     stx     CH376_COMMAND
     sta     CH376_DATA
     jmp     _ch376_wait_response

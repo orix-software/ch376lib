@@ -1,10 +1,10 @@
 .include "telestrat.inc"
 .include "include/ch376.inc"
 
-.export _ch376_set_usb_address
+.export _ch376_set_usb_speed
 
-.proc _ch376_set_usb_address
-    ldx     #CH376_SET_USB_ADDR
+.proc _ch376_set_usb_speed
+    ldx     #CH276_SET_USB_SPEED ;
     stx     CH376_COMMAND
     sta     CH376_DATA
     rts

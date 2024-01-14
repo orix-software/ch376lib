@@ -1,4 +1,5 @@
 #define CH376_LIB_VERSION_2023_4 0x00
+#define CH376_LIB_VERSION_2024_1 0x01
 
 /*/// "CH376 interface commands and constants" */
 
@@ -57,10 +58,9 @@
 #define CH376_CMD_DISK_QUERY    0x3F
 #define CH376_CMD_DIR_CREATE    0x40
 #define CH376_CMD_CLR_STALL     0x41
-#define CH376_CMD_GET_DESCR     0X42
 #define CH376_CMD_SET_ADDR      0X45
-#define CH375_CMD_GET_DESCR     0x46
-#define CH375_CMD_SET_CONFIG    0x49
+#define CH376_CMD_GET_DESCR     0x46
+#define CH376_CMD_SET_CONFIG    0x49
 #define CH376_SEC_READ          0x4B
 #define CH376_SEC_WRITE         0x4C
 #define CH376_CMD_AUTO_SETUP    0x4D
@@ -216,8 +216,12 @@ unsigned char ch376_file_close();
 
 unsigned char ch376_lib_version();
 
-
-
-
-
+// Since 2024.1
+void ch376_reset_all(void);
+void ch376_wait_response(void);
+void ch376_set_usb_speed(unsigned char speed);
+void ch376_set_usb_addr(unsigned char adress);
+void ch376_set_addr(unsigned char adress);
+void ch376_get_descr(unsigned char mode);
+void ch376_set_config(unsigned char config);
 
