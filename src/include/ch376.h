@@ -218,7 +218,7 @@ unsigned char ch376_lib_version();
 
 // Since 2024.1
 void ch376_reset_all(void);
-void ch376_wait_response(void);
+unsigned char ch376_wait_response(void);
 void ch376_set_usb_speed(unsigned char speed);
 void ch376_set_usb_addr(unsigned char adress);
 void ch376_set_addr(unsigned char adress);

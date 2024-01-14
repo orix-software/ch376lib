@@ -31,6 +31,4 @@ no_error:
     sta     CH376_COMMAND
     lda     CH376_DATA
     rts
-good_message:
-    rts
 .endproc
