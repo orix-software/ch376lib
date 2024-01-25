@@ -42,7 +42,7 @@ site_dir: api/
 theme:
     name: material
     #logo: favicon.png
-    #custom_dir: overrides
+    custom_dir: overrides
     highlightjs: true
     palette:
         primary: black
@@ -57,8 +57,8 @@ nav:
     - Assembly: assembly.md
     - C: c.md
 
-# extra_css:
-#     - stylesheets/extra.css
+extra_css:
+    - stylesheets/extra.css
 # extra:
 #     social:
 #         - icon: fontawesome/brands/twitter
