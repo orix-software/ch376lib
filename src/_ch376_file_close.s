@@ -4,10 +4,14 @@
 .import _ch376_wait_response
 
 .export _ch376_file_close
+.export ch376_file_close
 
+
+.proc _ch376_file_close
+.endproc
 
 ; A contains 0 if it needs to update length
-.proc _ch376_file_close
+.proc ch376_file_close
     ldx     #CH376_FILE_CLOSE
     stx     CH376_COMMAND
 .IFPC02

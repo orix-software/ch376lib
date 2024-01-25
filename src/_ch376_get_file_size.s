@@ -5,8 +5,12 @@
 .importzp ptr1
 
 .export  _ch376_get_file_size
+.export  ch376_get_file_size
 
 .proc _ch376_get_file_size
+.endproc
+
+.proc ch376_get_file_size
     lda     #CH376_GET_FILE_SIZE
     sta     CH376_COMMAND
     lda     #$68

@@ -1,54 +1,32 @@
 # C
 
-## _ch376_check_exist
+### Description
 
-## _ch376_dir_create
+Send a value, if ch376 is present, it will return 0XAA
 
-## _ch376_disk_capacity
+### Description
 
-## _ch376_disk_mount
+create a folder
 
-## _ch376_disk_query
+### Description
 
-## _ch376_file_close
+check disk capacity
 
-## _ch376_file_create
+### Description
 
-## _ch376_file_erase
-
-## _ch376_file_open
-
-## _ch376_get_descr
-
-## _ch376_get_file_size
-
-## _ch376_ic_get_ver
-
-## _ch376_lib_version
+get version
 
 ### Description
 
 Get lib version
 
-## _ch376_reset_all
+##void ch376_reset_all(void);
 
-## _ch376_seek_file
+### Description
 
-## _ch376_set_address
-
-## _ch376_set_config
-
-## _ch376_set_file_name
-
-## _ch376_set_usb_addr
-
-## _ch376_set_usb_mode
+reset CH376
 
 ### Description
 
 Set usb mode
-
-## _ch376_set_usb_speed
-
-## _ch376_wait_response
 

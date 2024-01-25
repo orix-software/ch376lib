@@ -5,8 +5,12 @@
 .import _ch376_wait_response
 
 .export _ch376_disk_query
+.export ch376_disk_query
 
 .proc _ch376_disk_query
+.endproc
+
+.proc ch376_disk_query
     lda     #CH376_DISK_QUERY
     sta     CH376_COMMAND
     jsr     _ch376_wait_response

@@ -98,6 +98,10 @@ for line in fileinput.input():
                 proc_name = ''
                 line_out = ''
 
+            elif inst[0] == ';;@proto':
+                line_out = '##'+ ' '.join(inst[1:])
+                line_out = line_out + '\n'
+
             elif inst[0] == ';;@brief':
                 line_out = '### Description\n\n'+ ' '.join(inst[1:])
                 line_out = line_out + '\n'
@@ -271,9 +275,9 @@ for line in fileinput.input():
                 # Ne prend pas en compte un Ã©ventuel commentaire sur la ligne .proc
                 # TODO: Ajouter un @brief pour le prendre en compte?
                 proc_name = inst[1]
-                if proc_name[0] == '_':
-                    line_out = "## " + proc_name + '\n'
-                else:
+                if not proc_name[0] == '_':
+                    #line_out = "## " + proc_name + '\n'
+                #else:
                     def_proc = False
 
 
