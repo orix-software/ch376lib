@@ -103,12 +103,13 @@ for line in fileinput.input():
 
             elif inst[0] == ';;@brief':
                 line_out = '***Description***\n\n'+ ' '.join(inst[1:])
+                line_out =  line_out + '\n'
 
             elif inst[0] == ';;@param':
                 line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
 
             elif inst[0] == ';;@returns':
-                line_out = '### Returns :\n'+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
+                line_out = '***Returns***\n'+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
 
             # Appel Ã  une fonction
             elif inst[0].lower() == 'jsr':

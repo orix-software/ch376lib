@@ -287,6 +287,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ch376_check_exist" class="md-nav__link">
+    ch376_check_exist
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ch376_dir_create" class="md-nav__link">
     ch376_dir_create
   </a>
@@ -487,6 +494,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ch376_check_exist" class="md-nav__link">
+    ch376_check_exist
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ch376_dir_create" class="md-nav__link">
     ch376_dir_create
   </a>
@@ -649,34 +663,41 @@
 
 
 <div><h1 id="assembly">Assembly</h1>
-<p>endproc
-proc ch376_check_exist
-   ;;@brief Send a value, if ch376 is present, it will return $AA
-   lda     #CH376_CHECK_EXIST ;
-   sta     CH376_COMMAND
-   lda     #$55
-   sta     CH376_DATA
-   lda     CH376_DATA
-   rts
-endproc</p>
+<h2 id="ch376_check_exist">ch376_check_exist</h2>
+<p><strong><em>Description</em></strong></p>
+<p>Send a value, if ch376 is present, it will return $AA</p>
+<p><strong><em>Returns</em></strong>
+<em>$AA</em> in accumulator if it's OK</p>
 <h2 id="ch376_dir_create">ch376_dir_create</h2>
 <p><strong><em>Description</em></strong></p>
 <p>create a folder</p>
+<p><strong><em>Returns</em></strong>
+<em>ch376</em> status values</p>
 <h2 id="ch376_disk_capacity">ch376_disk_capacity</h2>
 <p><strong><em>Description</em></strong></p>
 <p>check disk capacity</p>
 <h2 id="ch376_disk_mount">ch376_disk_mount</h2>
 <p><strong><em>Description</em></strong></p>
 <p>perform a disk mount</p>
+<p><strong><em>Returns</em></strong>
+<em>ch376</em> status values</p>
 <h2 id="ch376_disk_query">ch376_disk_query</h2>
 <h2 id="ch376_file_close">ch376_file_close</h2>
+<p><strong><em>Returns</em></strong>
+<em>ch376</em> status values</p>
 <h2 id="ch376_file_create">ch376_file_create</h2>
+<p><strong><em>Returns</em></strong>
+<em>ch376</em> status values</p>
 <h2 id="ch376_file_erase">ch376_file_erase</h2>
+<p><strong><em>Returns</em></strong>
+<em>ch376</em> status values</p>
 <h2 id="ch376_file_open">ch376_file_open</h2>
+<p><strong><em>Returns</em></strong>
+<em>ch376</em> status values</p>
 <h2 id="ch376_get_descr">ch376_get_descr</h2>
+<p><strong><em>Returns</em></strong>
+<em>ch376</em> status values</p>
 <h2 id="ch376_get_file_size">ch376_get_file_size</h2>
-<p>;;@brief get version
-Follownextroutine</p>
 <h2 id="ch376_ic_get_ver">ch376_ic_get_ver</h2>
 <p><strong><em>Description</em></strong></p>
 <p>get version</p>
@@ -687,6 +708,8 @@ Follownextroutine</p>
 <p><strong><em>Description</em></strong></p>
 <p>reset CH376</p>
 <h2 id="ch376_seek_file">ch376_seek_file</h2>
+<p><strong><em>Returns</em></strong>
+<em>ch376</em> status values</p>
 <h2 id="ch376_set_address">ch376_set_address</h2>
 <h2 id="ch376_set_config">ch376_set_config</h2>
 <h2 id="ch376_set_file_name">ch376_set_file_name</h2>
@@ -695,14 +718,16 @@ Follownextroutine</p>
 <p><strong><em>Description</em></strong></p>
 <p>Set usb mode</p>
 <h2 id="ch376_set_usb_speed">ch376_set_usb_speed</h2>
-<h2 id="ch376_wait_response">ch376_wait_response</h2></div>
+<h2 id="ch376_wait_response">ch376_wait_response</h2>
+<p><strong><em>Returns</em></strong>
+<em>ch376</em> status values</p></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2024-01-25
+      2024-01-26
     
   </small>
 </div>

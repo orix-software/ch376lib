@@ -8,10 +8,12 @@
 
 .proc _ch376_get_descr
     ;;@proto unsigned char ch376_get_descr(unsigned char mode);
+    ;;@returns ch376 status values
 .endproc
 
 .proc ch376_get_descr
     ; Get A : type descriptor or config
+    ;;@returns ch376 status values
     ldx     #CH376_CMD_GET_DESCR
     stx     CH376_COMMAND
     sta     CH376_DATA

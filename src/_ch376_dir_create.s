@@ -10,11 +10,11 @@
 .proc _ch376_dir_create
     ;;@proto unsigned char ch376_dir_create();
     ;;@brief create a folder
-
 .endproc
 
 .proc ch376_dir_create
     ;;@brief create a folder
+    ;;@returns ch376 status values
     lda     #CH376_DIR_CREATE
     sta     CH376_COMMAND
     jmp     _ch376_wait_response

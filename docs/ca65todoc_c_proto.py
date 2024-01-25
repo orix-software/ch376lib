@@ -98,6 +98,9 @@ for line in fileinput.input():
                 proc_name = ''
                 line_out = ''
 
+            elif inst[0] == ';;@bug':
+                lineout = '!!! bug ' + ' '.join(inst[1:])
+
             elif inst[0] == ';;@proto':
                 line_out = '##'+ ' '.join(inst[1:])
                 line_out = line_out + '\n'
@@ -110,7 +113,7 @@ for line in fileinput.input():
                 line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
 
             elif inst[0] == ';;@returns':
-                line_out = '### Returns :\n'+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
+                line_out = '***Returns***\n'+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
 
             # Appel Ã  une fonction
             elif inst[0].lower() == 'jsr':

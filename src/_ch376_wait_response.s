@@ -7,14 +7,18 @@
 
 .proc _ch376_wait_response
     ;;@proto unsigned char ch376_wait_response(void);
+    ;;@returns ch376 status values
 .endproc
 
 .proc ch376_wait_response
+    ;;@returns ch376 status values
 ; 1 return 1 if usb controller does not respond
 ; else A contains answer of the controller
     ldy     #$FF
+
 loop3:
     ldx     #$FF ; merci de laisser une valeur importante car parfois en mode non debug, le controleur ne répond pas tout de suite
+
 @loop:
     lda     CH376_COMMAND
     and     #%10000000

@@ -11,6 +11,7 @@
 .proc _ch376_disk_capacity
     ;;@proto ch376_disk_capacity();
     ;;@brief check disk capacity
+    ;;@bug Impossible to use
 .endproc
 
 .proc ch376_disk_capacity

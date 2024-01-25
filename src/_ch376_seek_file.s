@@ -10,11 +10,12 @@
 
 .proc _ch376_seek_file
     ;;@proto unsigned int  ch376_seek_file(int position);
+    ;;@returns ch376 status values
 .endproc
 
 ; [IN] AY : ptr
 .proc ch376_seek_file
-
+    ;;@returns ch376 status values
     ldx     #CH376_BYTE_LOCATE
     stx     CH376_COMMAND
     sta     CH376_DATA
