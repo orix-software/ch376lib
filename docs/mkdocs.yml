@@ -1,4 +1,4 @@
-site_name: CH376 LIB DOCUMENTATION
+site_name: CH376 LIB DOCUMENTATION 2024.1
 
 markdown_extensions:
     - pymdownx.highlight
@@ -38,10 +38,10 @@ plugins:
 dev_addr: '172.30.72.43:8001'
 
 docs_dir: code/
-
+site_dir: api/
 theme:
     name: material
-    logo: favicon.png
+    #logo: favicon.png
     #custom_dir: overrides
     highlightjs: true
     palette:
