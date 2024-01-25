@@ -109,13 +109,13 @@ for line in fileinput.input():
                 line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
 
             elif inst[0] == ';;@returnsA':
-                line_out = '***ReturnsA***\n'+ '* Accumulator : '+inst[1] +'* ' + ' '.join(inst[2:])
+                line_out = '***ReturnsA***\n\n'+ '* Accumulator : '+inst[1] +'* ' + ' '.join(inst[2:])
 
             elif inst[0] == ';;@returnsX':
-                line_out = '***ReturnsX***\n'+ '* X Register : '+inst[1] +'* ' + ' '.join(inst[2:])
+                line_out = '***ReturnsX***\n\n'+ '* X Register : '+inst[1] +'* ' + ' '.join(inst[2:])
 
             elif inst[0] == ';;@returnsY':
-                line_out = '***ReturnsY***\n'+ '* Y Register : '+inst[1] +'* ' + ' '.join(inst[2:])
+                line_out = '***ReturnsY***\n\n'+ '* Y Register : '+inst[1] +'* ' + ' '.join(inst[2:])
 
             # Appel Ã  une fonction
             elif inst[0].lower() == 'jsr':

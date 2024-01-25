@@ -7,6 +7,7 @@
 Send a value, if ch376 is present, it will return $AA
 
 ***ReturnsA***
+
 * Accumulator : $AA* if it's OK
 ## ch376_dir_create
 
@@ -15,6 +16,7 @@ Send a value, if ch376 is present, it will return $AA
 create a folder
 
 ***ReturnsA***
+
 * Accumulator : ch376* status values
 ## ch376_disk_capacity
 
@@ -29,26 +31,31 @@ check disk capacity
 perform a disk mount
 
 ***ReturnsA***
+
 * Accumulator : ch376* status values
 ## ch376_disk_query
 
 ## ch376_file_close
 
 ***ReturnsA***
+
 * Accumulator : ch376* status values
 ## ch376_file_create
 
 ***ReturnsA***
+
 * Accumulator : ch376* status values
 ## ch376_file_erase
 
 ## ch376_file_open
 
 ***ReturnsA***
+
 * Accumulator : ch376* status values
 ## ch376_get_descr
 
 ***ReturnsA***
+
 * Accumulator : ch376* status values
 ## ch376_get_file_size
 
@@ -59,6 +66,7 @@ perform a disk mount
 get version
 
 ***ReturnsA***
+
 * Accumulator : ch376* firmware version
 ## ch376_lib_version
 
@@ -67,6 +75,7 @@ get version
 Get lib version
 
 ***ReturnsA***
+
 * Accumulator : ch376* lib version
 ## ch376_reset_all
 
@@ -77,6 +86,7 @@ reset CH376
 ## ch376_seek_file
 
 ***ReturnsA***
+
 * Accumulator : ch376* status values
 ## ch376_set_address
 
@@ -97,4 +107,5 @@ Set usb mode
 ## ch376_wait_response
 
 ***ReturnsA***
+
 * Accumulator : ch376* status values
