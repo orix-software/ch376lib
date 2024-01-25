@@ -2,25 +2,25 @@
 
 ##unsigned char ch376_check_exist(void);
 
-*** Description ***
+***Description***
 
 Send a value, if ch376 is present, it will return 0XAA
 
 ##unsigned char ch376_dir_create();
 
-*** Description ***
+***Description***
 
 create a folder
 
 ##ch376_disk_capacity();
 
-*** Description ***
+***Description***
 
 check disk capacity
 
 ##unsigned char ch376_disk_mount(void);
 
-*** Description ***
+***Description***
 
 perform a disk mount
 
@@ -38,19 +38,19 @@ perform a disk mount
 
 ##void ch376_get_file_size(void);
 
-*** Description ***
+***Description***
 
 get version
 
 ##unsigned char ch376_lib_version(void);
 
-*** Description ***
+***Description***
 
 Get lib version
 
 ##void ch376_reset_all(void);
 
-*** Description ***
+***Description***
 
 reset CH376
 
@@ -64,7 +64,7 @@ reset CH376
 
 ##void ch376_set_usb_addr(unsigned char adress);
 
-*** Description ***
+***Description***
 
 Set usb mode
 
