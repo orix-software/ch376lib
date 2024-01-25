@@ -6,8 +6,14 @@
 .import _ch376_wait_response
 
 .export  _ch376_disk_capacity
+.export  ch376_disk_capacity
 
 .proc _ch376_disk_capacity
+    ;;@brief check disk capacity
+.endproc
+
+.proc ch376_disk_capacity
+    ;;@brief check disk capacity
     lda     #CH376_DISK_CAPACITY
     sta     CH376_COMMAND
     jsr     _ch376_wait_response

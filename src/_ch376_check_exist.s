@@ -2,8 +2,15 @@
 .include "include/ch376.inc"
 
 .export _ch376_check_exist
+.export ch376_check_exist
 
 .proc _ch376_check_exist
+    ;;@brief Send a value, if ch376 is present, it will return 0XAA
+    ;; Follow next routine
+.endproc
+
+.proc ch376_check_exist
+    ;;@brief Send a value, if ch376 is present, it will return $AA
     lda     #CH376_CHECK_EXIST ;
     sta     CH376_COMMAND
     lda     #$55

@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../assembly/">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -169,7 +171,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../code/assembly.md" class="md-tabs__link">
+      <a href="../assembly/" class="md-tabs__link">
         
   
     
@@ -184,9 +186,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../code/c.md" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -237,7 +241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../code/assembly.md" class="md-nav__link">
+      <a href="../assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -254,9 +258,29 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../code/c.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -265,6 +289,206 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_check_exist" class="md-nav__link">
+    _ch376_check_exist
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_dir_create" class="md-nav__link">
+    _ch376_dir_create
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_disk_capacity" class="md-nav__link">
+    _ch376_disk_capacity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_disk_mount" class="md-nav__link">
+    _ch376_disk_mount
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_disk_query" class="md-nav__link">
+    _ch376_disk_query
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_file_close" class="md-nav__link">
+    _ch376_file_close
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_file_create" class="md-nav__link">
+    _ch376_file_create
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_file_erase" class="md-nav__link">
+    _ch376_file_erase
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_file_open" class="md-nav__link">
+    _ch376_file_open
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_get_descr" class="md-nav__link">
+    _ch376_get_descr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_get_file_size" class="md-nav__link">
+    _ch376_get_file_size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_ic_get_ver" class="md-nav__link">
+    _ch376_ic_get_ver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_lib_version" class="md-nav__link">
+    _ch376_lib_version
+  </a>
+  
+    <nav class="md-nav" aria-label="_ch376_lib_version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_reset_all" class="md-nav__link">
+    _ch376_reset_all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_seek_file" class="md-nav__link">
+    _ch376_seek_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_set_address" class="md-nav__link">
+    _ch376_set_address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_set_config" class="md-nav__link">
+    _ch376_set_config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_set_file_name" class="md-nav__link">
+    _ch376_set_file_name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_set_usb_addr" class="md-nav__link">
+    _ch376_set_usb_addr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_set_usb_mode" class="md-nav__link">
+    _ch376_set_usb_mode
+  </a>
+  
+    <nav class="md-nav" aria-label="_ch376_set_usb_mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_set_usb_speed" class="md-nav__link">
+    _ch376_set_usb_speed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_ch376_wait_response" class="md-nav__link">
+    _ch376_wait_response
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
