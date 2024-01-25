@@ -5,9 +5,11 @@
 .export _ch376_wait_response
 .export ch376_wait_response
 
-ch376_wait_response := _ch376_wait_response
-
 .proc _ch376_wait_response
+    ;;@proto unsigned char ch376_wait_response(void);
+.endproc
+
+.proc ch376_wait_response
 ; 1 return 1 if usb controller does not respond
 ; else A contains answer of the controller
     ldy     #$FF

@@ -5,6 +5,7 @@
 .export _ch376_lib_version
 
 .proc _ch376_lib_version
+    ;;@proto unsigned char ch376_lib_version(void);
     ;;@brief Get lib version
     ldx     #$00
 .endproc

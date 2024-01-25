@@ -24,6 +24,10 @@ check disk capacity
 
 ## ch376_disk_mount
 
+### Description
+
+perform a disk mount
+
 ## ch376_disk_query
 
 ## ch376_file_close
@@ -38,15 +42,14 @@ check disk capacity
 
 ## ch376_get_file_size
 
-endproc
-proc ch376_ic_get_ver
    ;;@brief get version
-   lda     #CH376_GET_IC_VER
-   sta     CH376_COMMAND
-   lda     CH376_DATA
-   and     #%00111111 ; A contains revision
-   rts
-endproc
+Follownextroutine
+## ch376_ic_get_ver
+
+### Description
+
+get version
+
 ## ch376_lib_version
 
 ### Description
@@ -58,4 +61,24 @@ Get lib version
 ### Description
 
 reset CH376
+
+## ch376_seek_file
+
+## ch376_set_address
+
+## ch376_set_config
+
+## ch376_set_file_name
+
+## ch376_set_usb_addr
+
+## ch376_set_usb_mode
+
+### Description
+
+Set usb mode
+
+## ch376_set_usb_speed
+
+## ch376_wait_response
 

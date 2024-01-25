@@ -8,6 +8,7 @@
 .export  ch376_get_file_size
 
 .proc _ch376_get_file_size
+    ;;@proto void          ch376_get_file_size(void);
 .endproc
 
 .proc ch376_get_file_size

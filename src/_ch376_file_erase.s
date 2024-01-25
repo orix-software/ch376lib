@@ -8,6 +8,7 @@
 .export  ch376_file_erase
 
 .proc _ch376_file_erase
+    ;;@proto unsigned char ch376_file_erase();
 .endproc
 
 .proc ch376_file_erase

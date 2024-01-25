@@ -8,6 +8,7 @@
 .export ch376_disk_query
 
 .proc _ch376_disk_query
+    ;;@proto void          ch376_disk_query(void);
 .endproc
 
 .proc ch376_disk_query

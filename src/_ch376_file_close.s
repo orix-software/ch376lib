@@ -8,6 +8,7 @@
 
 
 .proc _ch376_file_close
+    ;;@proto unsigned char ch376_file_close();
 .endproc
 
 ; A contains 0 if it needs to update length

@@ -6,9 +6,14 @@
 .import _ch376_wait_response
 
 .export _ch376_seek_file
+.export ch376_seek_file
+
+.proc _ch376_seek_file
+    ;;@proto unsigned int  ch376_seek_file(int position);
+.endproc
 
 ; [IN] AY : ptr
-.proc _ch376_seek_file
+.proc ch376_seek_file
 
     ldx     #CH376_BYTE_LOCATE
     stx     CH376_COMMAND

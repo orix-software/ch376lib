@@ -7,6 +7,7 @@
 .export ch376_file_create
 
 .proc _ch376_file_create
+    ;;@proto unsigned char ch376_dir_create();
 .endproc
 
 .proc ch376_file_create

@@ -9,6 +9,7 @@
 .export  ch376_disk_capacity
 
 .proc _ch376_disk_capacity
+    ;;@proto ch376_disk_capacity();
     ;;@brief check disk capacity
 .endproc
 

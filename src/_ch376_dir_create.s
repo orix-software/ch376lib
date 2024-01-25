@@ -8,6 +8,7 @@
 .import _ch376_wait_response
 
 .proc _ch376_dir_create
+    ;;@proto unsigned char ch376_dir_create();
     ;;@brief create a folder
 
 .endproc

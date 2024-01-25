@@ -7,6 +7,7 @@
 .export ch376_file_open
 
 .proc _ch376_file_open
+    ;;@proto unsigned char ch376_file_open(void);
 .endproc
 
 .proc ch376_file_open

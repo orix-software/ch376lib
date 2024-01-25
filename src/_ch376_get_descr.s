@@ -7,6 +7,7 @@
 .export ch376_get_descr
 
 .proc _ch376_get_descr
+    ;;@proto unsigned char ch376_get_descr(unsigned char mode);
 .endproc
 
 .proc ch376_get_descr

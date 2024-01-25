@@ -224,3 +224,7 @@ void          ch376_set_address(unsigned char adress);
 unsigned char ch376_get_descr(unsigned char mode);
 void          ch376_set_config(unsigned char config);
 
+// Since 2024.2
+void          ch376_get_file_size(void);
+void          ch376_disk_query(void);
+void          ch376_disk_capacity();

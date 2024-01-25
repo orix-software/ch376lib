@@ -5,10 +5,15 @@
 .importzp ptr1
 
 .export _ch376_set_file_name
+.export ch376_set_file_name
+
+.proc _ch376_set_file_name
+    ;;@proto void          ch376_set_file_name(char *filename);
+.endproc
 
 ;@set filename, input : A and Y adress of the string, terminated by 0
 ; If the set is successful, then A contains 0
-.proc _ch376_set_file_name
+.proc ch376_set_file_name
     sta     ptr1
     sty     ptr1+1
 
