@@ -1,4 +1,4 @@
-site_name: ORIX v2023.3 DOCUMENTATION
+site_name: CH376 LIB DOCUMENTATION
 
 markdown_extensions:
     - pymdownx.highlight
@@ -37,10 +37,12 @@ plugins:
 
 dev_addr: '172.30.72.43:8001'
 
+docs_dir: code/
+
 theme:
     name: material
     logo: favicon.png
-    custom_dir: overrides
+    #custom_dir: overrides
     highlightjs: true
     palette:
         primary: black
@@ -53,212 +55,12 @@ theme:
 nav:
     - Home:
         - Introduction: index.md
-        - Hardware: hardware.md
-        - Software: software.md
-    # - Getting started:
-    #     - User manual: user_manual/overview.md
-    #     - Developer manual: developer_manual/index.md
-    - User manual:
-        - Features: user_manual/features.md
-        - Overview: user_manual/overview.md
-        - Commands:
-            - All commands: commands/all.md
-            - asm2k2: commands/asm2k2.md
-            - bank: commands/bank.md
-            - basic10: commands/basic10.md
-            - basic11: commands/basic11.md
-            - barboric: commands/barboric.md
-            - blakes7: commands/blakes7.md
-            - bootfd: commands/bootfd.md
-            - born1983: commands/born1983.md
-            - cat: commands/cat.md
-            - cd: commands/cd.md
-            - cksum: commands/cksum.md
-            - clear: commands/clear.md
-            - cp: commands/cp.md
-            - df: commands/df.md
-            - otimer: commands/otimer.md
-            - dsk-util: commands/dsk-util.md
-            - echo: commands/echo.md
-            - env: commands/env.md
-            - forth: commands/forth.md
-            - ftdos: commands/ftdos.md
-            - grep: commands/grep.md
-            - help: commands/help.md
-            - hexdump: commands/hexdump.md
-            - ioports: commands/ioports.md
-            - list: commands/list.md
-            - ls: commands/ls.md
-            - lscpu: commands/lscpu.md
-            - lsmem: commands/lsmem.md
-            - loader: commands/loader.md
-            - man: commands/man.md
-            - mkdir: commands/mkdir.md
-            - more: commands/more.md
-            - mount: commands/mount.md
-            - orixcfg: commands/orixcfg.md
-            - pwd: commands/pwd.md
-            - ps: commands/ps.md
-            - quintes: commands/quintes.md
-            - raw2dsk: commands/raw2dsk.md
-            - readdsk: commands/readdsk.md
-            - reboot: commands/reboot.md
-            - rm: commands/rm.md
-            - sedoric: commands/sedoric.md
-            - setfont: commands/setfont.md
-            - sh: commands/sh.md
-            - sterr: commands/strerr.md
-            - submit: commands/submit.md
-            - telstrat: commands/telstrat.md
-            - touch: commands/touch.md
-            - twil: commands/twil.md
-            - twiload: commands/twiload.md
-            - uname: commands/uname.md
-            - untar: commands/untar.md
-            - vi: commands/vi.md
-            - vidplay: commands/vidplay.md
-            - viewscr: commands/viewscr.md
-            - viewhrs: commands/viewhrs.md
-            - zerofx: commands/zerofx.md
-        - Twilighte board: user_manual/hardware/index.md
-        # - Floppy drive commands:
-        #     - Bootfd: user_manual/bootfd.md
-        # - Shell guide :
-        #     - Basic 11 commands: how-it-work/index.md
-        - Software loader: user_manual/loader.md
-        - Hardware manuals:
-            - Ribbon cable: hardware/nappe.md
-            - Plug voice synthetizer: hardware/synth_vocal_mea80900.md
-            - Oric incompatibility: hardware/incompatibility_oric.md
-            - Hardware issues: hardware/hardware_issues.md
-            - Sdcard over wifi: user_manual/devices/sdcard_reader_over_wifi.md
-        - Tutorials:
-            - Autoboot : tutorials/autoboot_fr.md
-            - Submit scripts: advanced_submit_part1
-        - Updates:
-            - 2023.3: update/2023_3.md
-            - 2023.2: update/2023_2.md
-            - 2023.1: update/2023_1.md
-            - 2022.4: update/2022_4.md
-            - 2022.3: update/2022_3.md
-            - commands:
-                - File: update/file/file.md
-    - Developer manual:
-        - Install: developer_manual/index.md
-        - Tutorials:
-            - hello world: developer_manual/tutorials/print_string.md
-        - Development guidelines: developer_manual/guidelines.md
-        - Memory management : developer_manual/memory.md
-        - Build an Orix rom : developer_manual/buildrom.md
-        - Build standalone Rom : developer_manual/buildstandalonerom.md
-        - Generate a binary for sdcard/usb key: binaries/generateBinary.md
-        - SDK for Assembly (Orixsdk):
-            - Overview: developer_manual/orixsdk_macros/overview.md
-            - Main usage: developer_manual/orixsdk.md
-            - File operations:
-                - fopen: developer_manual/orixsdk_macros/fopen.md
-                - fread: developer_manual/orixsdk_macros/fread.md
-                - fwrite: developer_manual/orixsdk_macros/fwrite.md
-                - fseek: developer_manual/orixsdk_macros/fseek.md
-                - fclose: developer_manual/orixsdk_macros/fclose.md
-                - mkdir: developer_manual/orixsdk_macros/mkdir.md
-                - chdir: developer_manual/orixsdk_macros/chdir.md
-                - getcwd: developer_manual/orixsdk_macros/getcwd.md
-                - unlink: developer_manual/orixsdk_macros/unlink.md
-            - Text mode operations:
-                - print: developer_manual/orixsdk_macros/print.md
-                - prints: developer_manual/orixsdk_macros/prints.md
-                - print_int: developer_manual/orixsdk_macros/print_int.md
-                - cputc: developer_manual/orixsdk_macros/cputc.md
-                - crlf: developer_manual/orixsdk_macros/crlf.md
-                - scroll: developer_manual/orixsdk_macros/scroll.md
-                - cursor: developer_manual/orixsdk_macros/cursor.md
-                - setscreen: developer_manual/orixsdk_macros/setscreen.md
-            - Memory operations:
-                - malloc: developer_manual/orixsdk_macros/malloc.md
-                - mfree: developer_manual/orixsdk_macros/mfree.md
-                - memdecal: developer_manual/orixsdk_macros/memdecal.md
-                - memmove: developer_manual/orixsdk_macros/memmove.md
-            - Strings operations:
-                - strncat: developer_manual/orixsdk_macros/strncat.md
-                - strncpy: developer_manual/orixsdk_macros/strncpy.md
-            - Command line operations:
-                - initmainargs: developer_manual/orixsdk_macros/initmainargs.md
-                - getmainargs: developer_manual/orixsdk_macros/getmainargs.md
-            - Keyboards operations:
-                - cgetc: developer_manual/orixsdk_macros/cgetc.md
-            - Process operations:
-                - exec: developer_manual/orixsdk_macros/exec.md
-            - Number operations:
-                - atoi: developer_manual/orixsdk_macros/atoi.md
-                - tohex: developer_manual/orixsdk_macros/tohex.md
-                - print_int: developer_manual/orixsdk_macros/print_int.md
-                - itoa: developer_manual/orixsdk_macros/itoa.md
-            - Sound operations:
-                - shoot: developer_manual/orixsdk_macros/shoot.md
-                - ping: developer_manual/orixsdk_macros/ping.md
-                - zap: developer_manual/orixsdk_macros/zap.md
-                - explode: developer_manual/orixsdk_macros/explode.md
 
-        - Generate man pages : developer_manual/buildman.md
-        - cc65 : developer_manual/cc65.md
-        - Binary header format : developer_manual/header.md
-        - Joysticks management : developer_manual/joysticks.md
-        - Cross development on real hardware : developer_manual/pizero_connection.md
-        - Oricutron VS real hardware : developer_manual/oricutronvsreal.md
-        - Kernel guide:
-            - Kernel: developer_manual/kernel.md
-            - Memmap: kernel/memmap.md
-            - Primitives:
-                - General list : kernel/primitives/index.md
-                - By category:
-                    - Command line args:
-                        - XMAINARGS: kernel/primitives/xmainargs.md
-                        - XGETARGV: kernel/primitives/xgetargv.md
-                    - Files operations:
-                        - XOPEN: kernel/primitives/xopen.md
-                        - XCLOSE: kernel/primitives/xclose.md
-                        - XFREAD: kernel/primitives/xfread.md
-                        - XWRITE: kernel/primitives/xwrite.md
-                        - XFSEEK: kernel/primitives/xfseek.md
-                        - XRM: kernel/primitives/xrm.md
-                        - XMKDIR: kernel/primitives/xmkdir.md
-                    - Memory operations:
-                        - XMALLOC: kernel/primitives/xmalloc.md
-                        - XFREE: kernel/primitives/xfree.md
-                    - Process Operations:
-                        - XEXEC: kernel/primitives/xexec.md
-                    - Keyboard Operations:
-                        - XRDW0: kernel/primitives/xrdw0.md
-                        - XRD0: kernel/primitives/xrd0.md
-                    - Textmode Operations:
-                        - XSCROB: kernel/primitives/xscrob.md
-                        - XSCROH: kernel/primitives/xscroh.md
-                        - XCRLF: kernel/primitives/xcrlf.md
-                        - XWR0: kernel/primitives/xwr0.md
-                        - XWSTR0: kernel/primitives/xwstr0.md
-                    - Numbers Operations:
-                        - XBINDX: kernel/primitives/xbindx.md
-                        - XDECIM: kernel/primitives/xdecim.md
-                        - XHEXA: kernel/primitives/xhexa.md
-                    - Kernel variables Operations:
-                        - XVALUES: kernel/primitives/xvalues.md
-                        - XVARS: kernel/primitives/xvars.md
-            - Binary boot sequence: developer_manual/binary_starts.md
-        - Hardware guide :
-            - Memory: hardware/memory.md
-            - I/O: hardware/i_o.md
-            - Firmware informations : developer_manual/firmware.md
-            - Joysticks: hardware/joysticks.md
-            - Eeprom structure: hardware/eeprom_structure.md
-        - Extra Libs :
-            - Twilighte library : libs/twillib.md
-
-extra_css:
-    - stylesheets/extra.css
-extra:
-    social:
-        - icon: fontawesome/brands/twitter
-          link: https://twitter.com/OrixTwil
-        - icon: fontawesome/brands/youtube
-          link: https://www.youtube.com/user/jede06600/videos
+# extra_css:
+#     - stylesheets/extra.css
+# extra:
+#     social:
+#         - icon: fontawesome/brands/twitter
+#           link: https://twitter.com/OrixTwil
+#         - icon: fontawesome/brands/youtube
+#           link: https://www.youtube.com/user/jede06600/videos
