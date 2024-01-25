@@ -193,10 +193,9 @@
 /* Le pointeur de fichier actuel, le décalage d'octet de la position actuelle de lecture et d'écriture (longueur totale 32 bits, octet de poids faible en premier) */ 
 #define VAR_CURRENT_OFFSET          0x6C
 
-
 unsigned char ch376_check_exist(void);
 unsigned char ch376_ic_get_version(void);
-void 		  ch376_set_usb_mode(unsigned char mode);
+void          ch376_set_usb_mode(unsigned char mode);
 unsigned char ch376_disk_mount(void);
 unsigned int  ch376_seek_file(int position);// 16 bytes
 
@@ -204,10 +203,10 @@ unsigned char ch376_lib_version(void);
 
 unsigned int  ch376_file_get_info(void);
 
-void 		  ch376_set_file_name(char *filename);
+void          ch376_set_file_name(char *filename);
 unsigned char ch376_file_open(void);
-void 		  ch376_set_bytes_write(unsigned int value);
-void 		  ch376_set_bytes_read(unsigned int value);
+void          ch376_set_bytes_write(unsigned int value);
+void          ch376_set_bytes_read(unsigned int value);
 unsigned char ch376_file_create();
 unsigned char ch376_dir_create();
 unsigned char ch376_file_erase();
