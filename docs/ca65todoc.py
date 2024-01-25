@@ -98,8 +98,11 @@ for line in fileinput.input():
                 proc_name = ''
                 line_out = ''
 
+            elif inst[0] == ';;@bug':
+                lineout = '!!! bug ' + ' '.join(inst[1:])
+
             elif inst[0] == ';;@brief':
-                line_out = '### Description\n\n'+ ' '.join(inst[1:]+'\n)
+                line_out = '*** Description ***\n\n'+ ' '.join(inst[1:])
 
             elif inst[0] == ';;@param':
                 line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])

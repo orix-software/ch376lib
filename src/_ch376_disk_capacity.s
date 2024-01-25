@@ -15,6 +15,7 @@
 
 .proc ch376_disk_capacity
     ;;@brief check disk capacity
+    ;;@bug Impossible to use
     lda     #CH376_DISK_CAPACITY
     sta     CH376_COMMAND
     jsr     _ch376_wait_response

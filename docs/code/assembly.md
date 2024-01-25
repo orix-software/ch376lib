@@ -12,22 +12,19 @@ proc ch376_check_exist
 endproc
 ## ch376_dir_create
 
-### Description
+*** Description ***
 
 create a folder
-
 ## ch376_disk_capacity
 
-### Description
+*** Description ***
 
 check disk capacity
-
 ## ch376_disk_mount
 
-### Description
+*** Description ***
 
 perform a disk mount
-
 ## ch376_disk_query
 
 ## ch376_file_close
@@ -46,22 +43,19 @@ perform a disk mount
 Follownextroutine
 ## ch376_ic_get_ver
 
-### Description
+*** Description ***
 
 get version
-
 ## ch376_lib_version
 
-### Description
+*** Description ***
 
 Get lib version
-
 ## ch376_reset_all
 
-### Description
+*** Description ***
 
 reset CH376
-
 ## ch376_seek_file
 
 ## ch376_set_address
@@ -74,10 +68,9 @@ reset CH376
 
 ## ch376_set_usb_mode
 
-### Description
+*** Description ***
 
 Set usb mode
-
 ## ch376_set_usb_speed
 
 ## ch376_wait_response

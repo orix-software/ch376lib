@@ -103,7 +103,7 @@ for line in fileinput.input():
                 line_out = line_out + '\n'
 
             elif inst[0] == ';;@brief':
-                line_out = '### Description\n\n'+ ' '.join(inst[1:])
+                line_out = '*** Description ***\n\n'+ ' '.join(inst[1:])
                 line_out = line_out + '\n'
 
             elif inst[0] == ';;@param':
