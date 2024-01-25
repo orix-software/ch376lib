@@ -272,9 +272,10 @@ for line in fileinput.input():
                 # TODO: Ajouter un @brief pour le prendre en compte?
                 proc_name = inst[1]
                 if proc_name[0] == '_':
-                    def_proc = False
-                else:
                     line_out = "## " + proc_name + '\n'
+                else:
+                    def_proc = False
+
 
             elif inst[0] == '.struct':
                 def_struct = True

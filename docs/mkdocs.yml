@@ -53,8 +53,8 @@ theme:
         - content.tabs.link
 
 nav:
-    - Home:
-        - Introduction: index.md
+    - Assembly: code/assembly.md
+    - C: code/c.md
 
 # extra_css:
 #     - stylesheets/extra.css
