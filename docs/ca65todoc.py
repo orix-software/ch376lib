@@ -99,8 +99,7 @@ for line in fileinput.input():
                 line_out = ''
 
             elif inst[0] == ';;@brief':
-                line_out = '### Description\n\n'+ ' '.join(inst[1:])
-                line_out = line_out + '\n'
+                line_out = '### Description\n\n'+ ' '.join(inst[1:]+'\n)
 
             elif inst[0] == ';;@param':
                 line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
