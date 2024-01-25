@@ -7,6 +7,7 @@
 .proc _ch376_lib_version
     ;;@proto unsigned char ch376_lib_version(void);
     ;;@brief Get lib version
+    ;;@returns ch376 lib version
     ldx     #$00
 .endproc
 
@@ -15,5 +16,6 @@
 .proc ch376_lib_version
     ;;@brief Get lib version
     lda     #CH376_LIB_VERSION_2024_1
+    ;;@returnsA ch376 lib version
     rts
 .endproc

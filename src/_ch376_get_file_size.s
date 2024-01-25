@@ -9,9 +9,11 @@
 
 .proc _ch376_get_file_size
     ;;@proto void          ch376_get_file_size(void);
+    ;;@bug Impossible to use
 .endproc
 
 .proc ch376_get_file_size
+    ;;@bug Impossible to use
     lda     #CH376_GET_FILE_SIZE
     sta     CH376_COMMAND
     lda     #$68

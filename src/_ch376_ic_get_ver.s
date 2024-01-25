@@ -7,6 +7,7 @@
 .proc _ch376_ic_get_ver
     ;;@proto unsigned char ch376_ic_get_version(void);
     ;;@brief get version
+    ;;@returns ch376 firmware version
     ;;Follow next routine
 .endproc
 
@@ -16,5 +17,6 @@
     sta     CH376_COMMAND
     lda     CH376_DATA
     and     #%00111111 ; A contains revision
+    ;;@returnsA ch376 firmware version
     rts
 .endproc

@@ -12,7 +12,7 @@
 .endproc
 
 .proc ch376_file_open
-    ;;@returns ch376 status values
+    ;;@returnsA ch376 status values
     lda     #CH376_FILE_OPEN
     sta     CH376_COMMAND
     jmp     _ch376_wait_response

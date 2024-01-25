@@ -15,7 +15,7 @@
 
 ; [IN] AY : ptr
 .proc ch376_seek_file
-    ;;@returns ch376 status values
+    ;;@returnsA ch376 status values
     ldx     #CH376_BYTE_LOCATE
     stx     CH376_COMMAND
     sta     CH376_DATA

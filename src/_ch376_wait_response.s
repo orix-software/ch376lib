@@ -11,7 +11,7 @@
 .endproc
 
 .proc ch376_wait_response
-    ;;@returns ch376 status values
+    ;;@returnsA ch376 status values
 ; 1 return 1 if usb controller does not respond
 ; else A contains answer of the controller
     ldy     #$FF

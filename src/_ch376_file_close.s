@@ -14,7 +14,7 @@
 
 ; A contains 0 if it needs to update length
 .proc ch376_file_close
-    ;;@returns ch376 status values
+    ;;@returnsA ch376 status values
     ldx     #CH376_FILE_CLOSE
     stx     CH376_COMMAND
 .IFPC02

@@ -14,7 +14,7 @@
 
 .proc ch376_check_exist
     ;;@brief Send a value, if ch376 is present, it will return $AA
-    ;;@returns $AA in accumulator if it's OK
+    ;;@returnsA $AA if it's OK
     lda     #CH376_CHECK_EXIST ;
     sta     CH376_COMMAND
     lda     #$55
