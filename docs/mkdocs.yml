@@ -53,6 +53,7 @@ theme:
         - content.tabs.link
 
 nav:
+    - Introduction: index.md
     - Assembly: assembly.md
     - C: c.md
 
