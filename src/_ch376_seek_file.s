@@ -7,6 +7,8 @@
 
 .importzp ptr1, ptr2
 
+.import popax
+
 .export _ch376_seek_file
 .export ch376_seek_file
 
