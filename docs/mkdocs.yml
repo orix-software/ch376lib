@@ -1,4 +1,4 @@
-site_name: CH376 LIB DOCUMENTATION 2024.1
+site_name: CH376 LIB DOCUMENTATION 2024.2
 
 markdown_extensions:
     - pymdownx.highlight

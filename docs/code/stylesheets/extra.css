@@ -1,0 +1,48 @@
+:root > * {
+  --md-code-bg-color: #1b1a1a;
+  --md-code-hl-name-color: #FFFFFF;
+  --md-code-fg-color: #FFFFFF;
+  --md-code-hl-operator-color: #58aa22;
+  --md-code-hl-punctuation-color: #FFFFFF;
+  --md-code-hl-comment-color: #707070;
+  --md-code-hl-generic-color: #037c0d;
+  --md-code-hl-variable-color: #FFFFFF;
+  --md-default-bg-color: #000000;
+  --md-default-fg-color: #FFFFFF;
+  --md-default-fg-color--lighter: #FFFFFF;
+  --md-default-fg-color--light: #FFFFFF;
+}
+
+.star {
+  color: #FFFF00;
+}
+
+.md-button  {
+  background-color: #707070;
+}
+
+.md-header__topic::before {
+  background-image: url("/degrade_before.png");
+}
+
+.md-ellipsis::before {
+  /*content: "";*/
+  display: inline-block;
+  width: 112px;
+  height: 16px;
+  margin-right: 5px;
+  /*background-image: url("/degrade_before.png");*/
+  background-size: cover;
+  text-align: left;
+}
+
+.md-ellipsis::after {
+  /*content: "";*/
+  display: inline-block;
+  width: 112px;
+  height: 16px;
+  margin-left: 5px;
+  /*background-image: url("/degrade_after.png");*/
+  background-size: cover;
+  text-align: left;
+}
