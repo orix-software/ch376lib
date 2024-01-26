@@ -96,10 +96,10 @@ for line in fileinput.input():
                 def_proc = False
 
                 proc_name = ''
-                line_out = ''
+                line_out = '\n'
 
             elif inst[0] == ';;@bug':
-                lineout = '!!! bug ' + ' '.join(inst[1:])
+                line_out = '!!! bug ' + ' '.join(inst[1:])
 
             elif inst[0] == ';;@proto':
                 line_out = '## '+ ' '.join(inst[1:])
@@ -112,6 +112,10 @@ for line in fileinput.input():
             elif ';;@input' in inst[0]:
                 if def_input_found == False:
                     line_out = '***Input***\n\n'
+                    def_input_found == True
+                else:
+                    line_out = ""
+
                 if inst[0] == ';;@inputPARAM':
                     param = inst[0] .split('_')
                     line_out = line_out + '*' +  param[1] +' : '+inst[1] +' ' + ' '.join(inst[2:])
@@ -120,7 +124,7 @@ for line in fileinput.input():
                 line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
 
             elif inst[0] == ';;@returns':
-                line_out = '***Returns***\n\n'+ '*'+inst[1] +'' + ' '.join(inst[2:])
+                line_out = '***Returns***\n\n'+ '*'+inst[1] +' ' + ' '.join(inst[2:])
 
             # Appel Ã  une fonction
             elif inst[0].lower() == 'jsr':

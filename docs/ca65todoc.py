@@ -96,10 +96,10 @@ for line in fileinput.input():
                 def_proc = False
 
                 proc_name = ''
-                line_out = ''
+                line_out = '\n'
 
             elif inst[0] == ';;@bug':
-                lineout = '!!! bug ' + ' '.join(inst[1:])
+                line_out = '!!! bug ' + ' '.join(inst[1:])
 
             elif inst[0] == ';;@brief':
                 line_out = '***Description***\n\n'+ ' '.join(inst[1:])
@@ -111,7 +111,9 @@ for line in fileinput.input():
             elif ';;@input' in inst[0]:
                 if def_input_found == False:
                     line_out = '***Input***\n\n'
-                    def_input_found== True
+                    def_input_found = True
+                else:
+                    line_out = ""
 
                 if inst[0] == ';;@inputMEM_':
                     memory = inst[0] .split('_')
@@ -126,8 +128,10 @@ for line in fileinput.input():
 
             elif ';;@returns' in inst[0]:
                 if def_return_found == False:
-                    line_out = '***Returns***\n\n'
+                    line_out = '\n***Returns***\n\n'
                     def_return_found = True
+                else:
+                    line_out = ""
 
                 if inst[0] == ';;@returnsA':
                     line_out = line_out + '* Accumulator : '+inst[1] +' ' + ' '.join(inst[2:])
