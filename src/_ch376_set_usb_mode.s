@@ -5,13 +5,14 @@
 .include "include/ch376.inc"
 
 .proc _ch376_set_usb_mode
-    ;;@brief Set usb mode
     ;;@proto void          ch376_set_usb_mode(unsigned char mode);
+    ;;@brief Set usb mode
+    ;;@inputPARAM_mode The usb mode to set
 .endproc
 
-; A contains mode
 .proc ch376_set_usb_mode
     ;;@brief Set usb mode
+    ;;@inputA The usb mode to set
     ldx     #CH376_SET_USB_MODE ; $15
     stx     CH376_COMMAND
 

@@ -102,18 +102,25 @@ for line in fileinput.input():
                 lineout = '!!! bug ' + ' '.join(inst[1:])
 
             elif inst[0] == ';;@proto':
-                line_out = '##'+ ' '.join(inst[1:])
+                line_out = '## '+ ' '.join(inst[1:])
                 line_out = line_out + '\n'
 
             elif inst[0] == ';;@brief':
                 line_out = '***Description***\n\n'+ ' '.join(inst[1:])
                 line_out = line_out + '\n'
 
+            elif ';;@input' in inst[0]:
+                if def_input_found == False:
+                    line_out = '***Input***\n\n'
+                if inst[0] == ';;@inputPARAM':
+                    param = inst[0] .split('_')
+                    line_out = line_out + '*' +  param[1] +' : '+inst[1] +' ' + ' '.join(inst[2:])
+
             elif inst[0] == ';;@param':
                 line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
 
             elif inst[0] == ';;@returns':
-                line_out = '***Returns***\n'+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
+                line_out = '***Returns***\n\n'+ '*'+inst[1] +'' + ' '.join(inst[2:])
 
             # Appel Ã  une fonction
             elif inst[0].lower() == 'jsr':
@@ -274,6 +281,8 @@ for line in fileinput.input():
 
             elif inst[0] == '.proc':
                 def_proc = True
+                def_input_found = False
+                def_returns_found = False
 
                 # Ne prend pas en compte un Ã©ventuel commentaire sur la ligne .proc
                 # TODO: Ajouter un @brief pour le prendre en compte?

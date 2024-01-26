@@ -7,13 +7,13 @@
 
 .proc _ch376_wait_response
     ;;@proto unsigned char ch376_wait_response(void);
+    ;;@brief Perform wait_response
     ;;@returns ch376 status values
 .endproc
 
 .proc ch376_wait_response
-    ;;@returnsA ch376 status values
-; 1 return 1 if usb controller does not respond
-; else A contains answer of the controller
+    ;;@returnsA ch376 status values (1 return 1 if usb controller does not respond)
+
     ldy     #$FF
 
 loop3:

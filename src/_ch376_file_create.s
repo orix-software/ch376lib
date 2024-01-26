@@ -8,10 +8,12 @@
 
 .proc _ch376_file_create
     ;;@proto unsigned char ch376_dir_create();
+    ;;@brief create file
     ;;@returns ch376 status values
 .endproc
 
 .proc ch376_file_create
+    ;;@brief create file
     ;;@returnsA ch376 status values
     lda     #CH376_CMD_FILE_CREATE
     sta     CH376_COMMAND

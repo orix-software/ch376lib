@@ -704,8 +704,8 @@
 <h2 id="unsigned-char-ch376_check_existvoid">unsigned char ch376_check_exist(void);</h2>
 <p><strong><em>Description</em></strong></p>
 <p>Send a value, if ch376 is present, it will return 0XAA</p>
-<p><strong><em>Returns</em></strong>
-<em>0XAA</em> if it's OK</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*0XAAif it's OK</p>
 <h2 id="unsigned-char-ch376_dir_create">unsigned char ch376_dir_create();</h2>
 <p><strong><em>Description</em></strong></p>
 <p>create a folder</p>
@@ -715,52 +715,76 @@
 <h2 id="unsigned-char-ch376_disk_mountvoid">unsigned char ch376_disk_mount(void);</h2>
 <p><strong><em>Description</em></strong></p>
 <p>perform a disk mount</p>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> status values</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376status values</p>
 <h2 id="void-ch376_disk_queryvoid">void ch376_disk_query(void);</h2>
 <h2 id="unsigned-char-ch376_file_close">unsigned char ch376_file_close();</h2>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> status values</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376status values</p>
 <h2 id="unsigned-char-ch376_dir_create_1">unsigned char ch376_dir_create();</h2>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> status values</p>
+<p><strong><em>Description</em></strong></p>
+<p>create file</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376status values</p>
 <h2 id="unsigned-char-ch376_file_erase">unsigned char ch376_file_erase();</h2>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> status values</p>
+<p><strong><em>Description</em></strong></p>
+<p>erase file</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376status values</p>
 <h2 id="unsigned-char-ch376_file_openvoid">unsigned char ch376_file_open(void);</h2>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> status values</p>
+<p><strong><em>Description</em></strong></p>
+<p>open file</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376status values</p>
 <h2 id="unsigned-char-ch376_get_descrunsigned-char-mode">unsigned char ch376_get_descr(unsigned char mode);</h2>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> status values</p>
+<p><strong><em>Description</em></strong></p>
+<p>Get usb descr device</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376status values</p>
 <h2 id="void-ch376_get_file_sizevoid">void ch376_get_file_size(void);</h2>
 <h2 id="unsigned-char-ch376_ic_get_versionvoid">unsigned char ch376_ic_get_version(void);</h2>
 <p><strong><em>Description</em></strong></p>
 <p>get version</p>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> firmware version</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376firmware version</p>
 <h2 id="unsigned-char-ch376_lib_versionvoid">unsigned char ch376_lib_version(void);</h2>
 <p><strong><em>Description</em></strong></p>
 <p>Get lib version</p>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> lib version</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376lib version</p>
 <h2 id="void-ch376_reset_allvoid">void ch376_reset_all(void);</h2>
 <p><strong><em>Description</em></strong></p>
 <p>reset CH376</p>
 <h2 id="unsigned-int-ch376_seek_fileint-position">unsigned int ch376_seek_file(int position);</h2>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> status values</p>
+<p><strong><em>Description</em></strong></p>
+<p>Seek file</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376status values</p>
 <h2 id="void-ch376_set_addressunsigned-char-adress">void ch376_set_address(unsigned char adress);</h2>
+<p><strong><em>Description</em></strong></p>
+<p>set usb address</p>
 <h2 id="void-ch376_set_configunsigned-char-config">void ch376_set_config(unsigned char config);</h2>
+<p><strong><em>Description</em></strong></p>
+<p>set config for usb device</p>
 <h2 id="void-ch376_set_file_namechar-filename">void ch376_set_file_name(char *filename);</h2>
+<p><strong><em>Description</em></strong></p>
+<p>set file_name</p>
 <h2 id="void-ch376_set_usb_addrunsigned-char-adress">void ch376_set_usb_addr(unsigned char adress);</h2>
 <p><strong><em>Description</em></strong></p>
-<p>Set usb mode</p>
+<p>set usb_address</p>
 <h2 id="void-ch376_set_usb_modeunsigned-char-mode">void ch376_set_usb_mode(unsigned char mode);</h2>
+<p><strong><em>Description</em></strong></p>
+<p>Set usb mode</p>
+<p><strong><em>Input</em></strong></p>
 <h2 id="void-ch376_set_usb_speedunsigned-char-speed">void ch376_set_usb_speed(unsigned char speed);</h2>
+<p><strong><em>Description</em></strong></p>
+<p>Set usb mode</p>
+<p><strong><em>Input</em></strong></p>
 <h2 id="unsigned-char-ch376_wait_responsevoid">unsigned char ch376_wait_response(void);</h2>
-<p><strong><em>Returns</em></strong>
-<em>ch376</em> status values</p></div>
+<p><strong><em>Description</em></strong></p>
+<p>Perform wait_response</p>
+<p><strong><em>Returns</em></strong></p>
+<p>*ch376status values</p></div>
 
   <hr>
 <div class="md-source-file">

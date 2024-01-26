@@ -706,16 +706,16 @@
 <h2 id="ch376_check_exist">ch376_check_exist</h2>
 <p><strong><em>Description</em></strong></p>
 <p>Send a value, if ch376 is present, it will return $AA</p>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Returns</em></strong></p>
 <ul>
-<li>Accumulator : $AA* if it's OK</li>
+<li>Accumulator : $AA if it's OK</li>
 </ul>
 <h2 id="ch376_dir_create">ch376_dir_create</h2>
 <p><strong><em>Description</em></strong></p>
 <p>create a folder</p>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Returns</em></strong></p>
 <ul>
-<li>Accumulator : ch376* status values</li>
+<li>Accumulator : ch376 status values</li>
 </ul>
 <h2 id="ch376_disk_capacity">ch376_disk_capacity</h2>
 <p><strong><em>Description</em></strong></p>
@@ -723,67 +723,128 @@
 <h2 id="ch376_disk_mount">ch376_disk_mount</h2>
 <p><strong><em>Description</em></strong></p>
 <p>perform a disk mount</p>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Returns</em></strong></p>
 <ul>
-<li>Accumulator : ch376* status values</li>
+<li>Accumulator : ch376 status values</li>
 </ul>
 <h2 id="ch376_disk_query">ch376_disk_query</h2>
 <h2 id="ch376_file_close">ch376_file_close</h2>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Returns</em></strong></p>
 <ul>
-<li>Accumulator : ch376* status values</li>
+<li>Accumulator : ch376 status values</li>
 </ul>
 <h2 id="ch376_file_create">ch376_file_create</h2>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Description</em></strong></p>
+<p>create file</p>
+<p><strong><em>Returns</em></strong></p>
 <ul>
-<li>Accumulator : ch376* status values</li>
+<li>Accumulator : ch376 status values</li>
 </ul>
 <h2 id="ch376_file_erase">ch376_file_erase</h2>
-<h2 id="ch376_file_open">ch376_file_open</h2>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Description</em></strong></p>
+<p>Erase file</p>
+<p><strong><em>Returns</em></strong></p>
 <ul>
-<li>Accumulator : ch376* status values</li>
+<li>Accumulator : ch376 status values</li>
+</ul>
+<h2 id="ch376_file_open">ch376_file_open</h2>
+<p><strong><em>Description</em></strong></p>
+<p>open file</p>
+<p><strong><em>Returns</em></strong></p>
+<ul>
+<li>Accumulator : ch376 status values</li>
 </ul>
 <h2 id="ch376_get_descr">ch376_get_descr</h2>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Returns</em></strong></p>
 <ul>
-<li>Accumulator : ch376* status values</li>
+<li>Accumulator : ch376 status values</li>
 </ul>
+<p><strong><em>Description</em></strong></p>
+<p>Get usb descr device</p>
 <h2 id="ch376_get_file_size">ch376_get_file_size</h2>
 <h2 id="ch376_ic_get_ver">ch376_ic_get_ver</h2>
 <p><strong><em>Description</em></strong></p>
 <p>get version</p>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Returns</em></strong></p>
 <ul>
-<li>Accumulator : ch376* firmware version</li>
+<li>Accumulator : ch376 firmware version</li>
 </ul>
 <h2 id="ch376_lib_version">ch376_lib_version</h2>
 <p><strong><em>Description</em></strong></p>
 <p>Get lib version</p>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Returns</em></strong></p>
 <ul>
-<li>Accumulator : ch376* lib version</li>
+<li>Accumulator : ch376 lib version</li>
 </ul>
 <h2 id="ch376_reset_all">ch376_reset_all</h2>
 <p><strong><em>Description</em></strong></p>
 <p>reset CH376</p>
 <h2 id="ch376_seek_file">ch376_seek_file</h2>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Description</em></strong></p>
+<p>Seek file. Manage 24 bits only</p>
+<p><strong><em>Input</em></strong></p>
 <ul>
-<li>Accumulator : ch376* status values</li>
+<li>
+<p>Accumulator : First byte
+<strong><em>Input</em></strong></p>
+</li>
+<li>
+<p>Y Register : second byte
+<strong><em>Input</em></strong></p>
+</li>
+<li>
+<p>X Register : third byte byte
+<strong><em>Input</em></strong></p>
+</li>
+</ul>
+<p><strong><em>Returns</em></strong></p>
+<ul>
+<li>Accumulator : ch376 status values</li>
 </ul>
 <h2 id="ch376_set_address">ch376_set_address</h2>
+<p><strong><em>Description</em></strong></p>
+<p>set usb address</p>
 <h2 id="ch376_set_config">ch376_set_config</h2>
+<p><strong><em>Description</em></strong></p>
+<p>set config for usb device</p>
 <h2 id="ch376_set_file_name">ch376_set_file_name</h2>
+<p><strong><em>Description</em></strong></p>
+<p>set file_name</p>
+<p><strong><em>Input</em></strong></p>
+<ul>
+<li>
+<p>Accumulator : Low ptr adress of the string, terminated by 0
+<strong><em>Input</em></strong></p>
+</li>
+<li>
+<p>Y Register : High ptr adress of the string, terminated by 0</p>
+</li>
+</ul>
 <h2 id="ch376_set_usb_addr">ch376_set_usb_addr</h2>
+<p><strong><em>Description</em></strong></p>
+<p>set usb_address</p>
+<p><strong><em>Input</em></strong></p>
+<ul>
+<li>Accumulator : The address to set</li>
+</ul>
 <h2 id="ch376_set_usb_mode">ch376_set_usb_mode</h2>
 <p><strong><em>Description</em></strong></p>
 <p>Set usb mode</p>
-<h2 id="ch376_set_usb_speed">ch376_set_usb_speed</h2>
-<h2 id="ch376_wait_response">ch376_wait_response</h2>
-<p><strong><em>ReturnsA</em></strong></p>
+<p><strong><em>Input</em></strong></p>
 <ul>
-<li>Accumulator : ch376* status values</li>
+<li>Accumulator : The usb mode to set</li>
+</ul>
+<h2 id="ch376_set_usb_speed">ch376_set_usb_speed</h2>
+<p><strong><em>Description</em></strong></p>
+<p>Set usb mode</p>
+<p><strong><em>Input</em></strong></p>
+<ul>
+<li>Accumulator : The speed for usb</li>
+</ul>
+<h2 id="ch376_wait_response">ch376_wait_response</h2>
+<p><strong><em>Returns</em></strong></p>
+<ul>
+<li>Accumulator : ch376 status values (1 return 1 if usb controller does not respond)</li>
 </ul></div>
 
   <hr>

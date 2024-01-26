@@ -8,12 +8,13 @@
 
 .proc _ch376_get_descr
     ;;@proto unsigned char ch376_get_descr(unsigned char mode);
+    ;;@brief Get usb descr device
     ;;@returns ch376 status values
 .endproc
 
 .proc ch376_get_descr
-    ; Get A : type descriptor or config
     ;;@returnsA ch376 status values
+    ;;@brief Get usb descr device
     ldx     #CH376_CMD_GET_DESCR
     stx     CH376_COMMAND
     sta     CH376_DATA

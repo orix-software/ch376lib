@@ -8,10 +8,12 @@
 
 .proc _ch376_file_open
     ;;@proto unsigned char ch376_file_open(void);
+    ;;@brief open file
     ;;@returns ch376 status values
 .endproc
 
 .proc ch376_file_open
+    ;;@brief open file
     ;;@returnsA ch376 status values
     lda     #CH376_FILE_OPEN
     sta     CH376_COMMAND

@@ -108,14 +108,34 @@ for line in fileinput.input():
             elif inst[0] == ';;@param':
                 line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
 
-            elif inst[0] == ';;@returnsA':
-                line_out = '***ReturnsA***\n\n'+ '* Accumulator : '+inst[1] +'* ' + ' '.join(inst[2:])
+            elif ';;@input' in inst[0]:
+                if def_input_found == False:
+                    line_out = '***Input***\n\n'
+                    def_input_found== True
 
-            elif inst[0] == ';;@returnsX':
-                line_out = '***ReturnsX***\n\n'+ '* X Register : '+inst[1] +'* ' + ' '.join(inst[2:])
+                if inst[0] == ';;@inputMEM_':
+                    memory = inst[0] .split('_')
+                    line_out = line_out + '*' +  memory[1] +' : '+inst[1] +' ' + ' '.join(inst[2:])
 
-            elif inst[0] == ';;@returnsY':
-                line_out = '***ReturnsY***\n\n'+ '* Y Register : '+inst[1] +'* ' + ' '.join(inst[2:])
+                if inst[0] == ';;@inputA':
+                    line_out = line_out + '* Accumulator : '+inst[1] +' ' + ' '.join(inst[2:])
+                if inst[0] == ';;@inputX':
+                    line_out = line_out + '* X Register : '+inst[1] +' ' + ' '.join(inst[2:])
+                if inst[0] == ';;@inputY':
+                    line_out = line_out + '* Y Register : '+inst[1] +' ' + ' '.join(inst[2:])
+
+            elif ';;@returns' in inst[0]:
+                if def_return_found == False:
+                    line_out = '***Returns***\n\n'
+                    def_return_found = True
+
+                if inst[0] == ';;@returnsA':
+                    line_out = line_out + '* Accumulator : '+inst[1] +' ' + ' '.join(inst[2:])
+                if inst[0] == ';;@returnsX':
+                    line_out = line_out + '* X Register : '+inst[1] +' ' + ' '.join(inst[2:])
+                if inst[0] == ';;@returnsY':
+                    line_out = line_out + '* Y Register : '+inst[1] +' ' + ' '.join(inst[2:])
+                line_out = line_out + '\n'
 
             # Appel Ã  une fonction
             elif inst[0].lower() == 'jsr':
@@ -276,6 +296,8 @@ for line in fileinput.input():
 
             elif inst[0] == '.proc':
                 def_proc = True
+                def_return_found = False
+                def_input_found = False
 
                 # Ne prend pas en compte un Ã©ventuel commentaire sur la ligne .proc
                 # TODO: Ajouter un @brief pour le prendre en compte?
