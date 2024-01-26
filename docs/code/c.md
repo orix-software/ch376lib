@@ -130,7 +130,7 @@ reset CH376
 
 
 
-## unsigned int ch376_seek_file(int position);
+## unsigned int ch376_seek_file(long position);
 
 ***Description***
 

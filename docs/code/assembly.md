@@ -6,15 +6,20 @@
 
 If ch376 is present, it will return $AA
 
+
 ***Returns***
 
 * Accumulator : $AA if it's OK
 
+***Example***
+
 ```ca65
-jsr   ch376_check_exist
-cmp   #$AA
-beq   @exists
-rts   ;   Does   not   exist
+ jsr ch376_check_exist
+ cmp #$AA
+ beq @exists
+ rts ; Does not exist
+@exists:
+...
 ```
 
 
@@ -24,6 +29,7 @@ rts   ;   Does   not   exist
 ***Description***
 
 create a folder
+
 
 ***Returns***
 
@@ -36,6 +42,7 @@ create a folder
 ***Description***
 
 check disk capacity
+
 !!! bug "Impossible to use"
 
 
@@ -44,6 +51,7 @@ check disk capacity
 ***Description***
 
 perform a disk mount
+
 
 ***Returns***
 
@@ -71,6 +79,7 @@ perform a disk mount
 
 create file
 
+
 ***Returns***
 
 * Accumulator : ch376 status values
@@ -83,6 +92,7 @@ create file
 
 Erase file
 
+
 ***Returns***
 
 * Accumulator : ch376 status values
@@ -94,6 +104,7 @@ Erase file
 ***Description***
 
 open file
+
 
 ***Returns***
 
@@ -113,6 +124,7 @@ open file
 Get usb descr device
 
 
+
 ## ch376_get_file_size
 
 !!! bug "Impossible to use"
@@ -123,6 +135,7 @@ Get usb descr device
 ***Description***
 
 get version
+
 
 ***Returns***
 
@@ -136,9 +149,24 @@ get version
 
 Get lib version
 
+
 ***Returns***
 
 * Accumulator : ch376 lib version
+
+***Example***
+
+```ca65
+ jsr ch376_lib_version
+ cmp #CH376_LIB_VERSION_2024_2
+ beq @right_version
+ ; Wrong version
+...
+ rts
+@right_version:
+...
+ rts
+```
 
 
 
@@ -148,12 +176,21 @@ Get lib version
 
 reset CH376
 
+***Example***
+
+```ca65
+ jsr ch376_reset_all
+ rts
+```
+
+
 
 ## ch376_seek_file
 
 ***Description***
 
-Seek file. Manage 24 bits only
+Seek file. Performs a wait_response
+
 ***Input***
 
 * Accumulator : First byte
@@ -164,6 +201,7 @@ Seek file. Manage 24 bits only
 
 * Accumulator : ch376 status values
 
+!!! note "Not tested"
 
 
 ## ch376_set_address
@@ -173,6 +211,7 @@ Seek file. Manage 24 bits only
 set usb address
 
 
+
 ## ch376_set_config
 
 ***Description***
@@ -180,11 +219,13 @@ set usb address
 set config for usb device
 
 
+
 ## ch376_set_file_name
 
 ***Description***
 
 set file_name
+
 ***Input***
 
 * Accumulator : Low ptr adress of the string, terminated by 0
@@ -196,6 +237,7 @@ set file_name
 ***Description***
 
 set usb_address
+
 ***Input***
 
 * Accumulator : The address to set
@@ -206,6 +248,7 @@ set usb_address
 ***Description***
 
 Set usb mode
+
 ***Input***
 
 * Accumulator : The usb mode to set
@@ -216,6 +259,7 @@ Set usb mode
 ***Description***
 
 Set usb mode
+
 ***Input***
 
 * Accumulator : The speed for usb

@@ -101,20 +101,24 @@ for line in fileinput.input():
             elif inst[0] == ';;@bug':
                 line_out = '!!! bug "' + ' '.join(inst[1:]) + '"'
 
+            elif inst[0] == ';;@note':
+                line_out = '!!! note "' + ' '.join(inst[1:]) + '"'
+
             elif ';;@```' in inst[0]:
                 if inst[0] == ';;@```':
                     line_out = '```'
                     line_out =  line_out + '\n'
                 else:
                     line_out = ''.join(inst[0:])
-                    line_out =  line_out.replace(';;@','')
+                    line_out =  '***Example***\n\n' + line_out.replace(';;@','')
 
-            elif inst[0] == ';;@`':
-                line_out = '   ' .join(inst[1:])
+            elif ';;@`' in inst[0]:
+                line_out = ' '.join(inst[0:])
+                line_out = line_out.replace(';;@`','')
 
             elif inst[0] == ';;@brief':
                 line_out = '***Description***\n\n' + ' '.join(inst[1:])
-                #line_out =  line_out + '\n'
+                line_out =  line_out + '\n'
 
             elif inst[0] == ';;@param':
                 line_out = '* '+ '*'+inst[1] + '* ' + ' '.join(inst[2:])

@@ -15,7 +15,19 @@
 
 .proc ch376_lib_version
     ;;@brief Get lib version
-    lda     #CH376_LIB_VERSION_2024_1
     ;;@returnsA ch376 lib version
+    ;;@```ca65
+    ;;@`  jsr       ch376_lib_version
+    ;;@`  cmp       #CH376_LIB_VERSION_2024_2
+    ;;@`  beq       @right_version
+    ;;@`  ; Wrong version
+    ;;@`...
+    ;;@`  rts
+    ;;@`@right_version:
+    ;;@`...
+    ;;@`  rts
+    ;;@```
+    lda     #CH376_LIB_VERSION_2024_1
+
     rts
 .endproc

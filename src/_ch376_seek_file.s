@@ -5,28 +5,36 @@
 
 .import _ch376_wait_response
 
-.importzp ptr1
+.importzp ptr1, ptr2
 
 .export _ch376_seek_file
 .export ch376_seek_file
 
 .proc _ch376_seek_file
-    ;;@proto unsigned int  ch376_seek_file(int position);
+    ;;@proto unsigned int  ch376_seek_file(long position);
     ;;@brief Seek file
+    ;;@note Not tested
     ;;@returns ch376 status values
     sta     ptr1
     stx     ptr1+1
-    ;jsr     popax
+    jsr     popax
+    sta     ptr2
+    stx     RES
+
+    lda     ptr1
+    ldy     ptr1+1
+    ldx     ptr2
 .endproc
 
 ; [IN] AY : ptr
 .proc ch376_seek_file
-    ;;@brief Seek file. Manage 24 bits only
+    ;;@brief Seek file. Performs a wait_response
     ;;@inputA First byte
     ;;@inputY second byte
     ;;@inputX third byte byte
     ;;@inputMEM_RES Fourth byte
     ;;@returnsA ch376 status values
+    ;;@note Not tested
     pha
     lda     #CH376_BYTE_LOCATE
     sta     CH376_COMMAND
