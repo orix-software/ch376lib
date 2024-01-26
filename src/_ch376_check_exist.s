@@ -15,6 +15,14 @@
 .proc ch376_check_exist
     ;;@brief If ch376 is present, it will return $AA
     ;;@returnsA $AA if it's OK
+    ;;@```ca65
+    ;;@`  jsr       ch376_check_exist
+    ;;@`  cmp       #$AA
+    ;;@`  beq       @exists
+    ;;@`  rts       ; Does not exist
+    ;;@`@exists:
+    ;;@`...
+    ;;@```
     lda     #CH376_CHECK_EXIST ;
     sta     CH376_COMMAND
     lda     #$55

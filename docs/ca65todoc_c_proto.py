@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf8 -*-
+# Initial version : from ch376lib
 
 from __future__ import print_function
 
@@ -99,7 +100,7 @@ for line in fileinput.input():
                 line_out = '\n'
 
             elif inst[0] == ';;@bug':
-                line_out = '!!! bug ' + ' '.join(inst[1:])
+                line_out = '!!! bug "' + ' '.join(inst[1:]) + '"'
 
             elif inst[0] == ';;@proto':
                 line_out = '## '+ ' '.join(inst[1:])
@@ -124,7 +125,7 @@ for line in fileinput.input():
                 line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
 
             elif inst[0] == ';;@returns':
-                line_out = '***Returns***\n\n'+ '*'+inst[1] +' ' + ' '.join(inst[2:])
+                line_out = '***Returns***\n\n'+ '' + inst[1] +' ' + ' '.join(inst[2:])
 
             # Appel Ã  une fonction
             elif inst[0].lower() == 'jsr':

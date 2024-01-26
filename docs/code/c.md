@@ -4,11 +4,11 @@
 
 ***Description***
 
-Send a value, if ch376 is present, it will return 0XAA
+If ch376 is present, it will return 0XAA
 
 ***Returns***
 
-*0XAA if it's OK
+0XAA if it's OK
 
 
 ## unsigned char ch376_dir_create();
@@ -25,7 +25,7 @@ create a folder
 
 check disk capacity
 
-!!! bug Impossible to use
+!!! bug "Impossible to use"
 
 
 ## unsigned char ch376_disk_mount(void);
@@ -36,19 +36,19 @@ perform a disk mount
 
 ***Returns***
 
-*ch376 status values
+ch376 status values
 
 
 ## void ch376_disk_query(void);
 
-!!! bug Impossible to use
+!!! bug "Impossible to use"
 
 
 ## unsigned char ch376_file_close();
 
 ***Returns***
 
-*ch376 status values
+ch376 status values
 
 
 ## unsigned char ch376_dir_create();
@@ -59,7 +59,7 @@ create file
 
 ***Returns***
 
-*ch376 status values
+ch376 status values
 
 
 ## unsigned char ch376_file_erase();
@@ -70,7 +70,7 @@ erase file
 
 ***Returns***
 
-*ch376 status values
+ch376 status values
 
 
 ## unsigned char ch376_file_open(void);
@@ -81,7 +81,7 @@ open file
 
 ***Returns***
 
-*ch376 status values
+ch376 status values
 
 
 ## unsigned char ch376_get_descr(unsigned char mode);
@@ -92,12 +92,12 @@ Get usb descr device
 
 ***Returns***
 
-*ch376 status values
+ch376 status values
 
 
 ## void ch376_get_file_size(void);
 
-!!! bug Impossible to use
+!!! bug "Impossible to use"
 
 
 ## unsigned char ch376_ic_get_version(void);
@@ -108,7 +108,7 @@ get version
 
 ***Returns***
 
-*ch376 firmware version
+ch376 firmware version
 
 
 ## unsigned char ch376_lib_version(void);
@@ -119,7 +119,7 @@ Get lib version
 
 ***Returns***
 
-*ch376 lib version
+ch376 lib version
 
 
 ## void ch376_reset_all(void);
@@ -138,7 +138,7 @@ Seek file
 
 ***Returns***
 
-*ch376 status values
+ch376 status values
 
 
 ## void ch376_set_address(unsigned char adress);
@@ -203,6 +203,6 @@ Perform wait_response
 
 ***Returns***
 
-*ch376 status values
+ch376 status values
 
 

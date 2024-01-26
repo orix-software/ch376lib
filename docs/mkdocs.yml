@@ -55,6 +55,29 @@ theme:
 nav:
     - Introduction: index.md
     - Assembly: assembly.md
+    # - Routines:
+    #     - ch376_check_exist: api/ch376_check_exist.md
+    #     - ch376_dir_create: ch376_dir_create.md
+    #     - ch376_disk_capacity: ch376_disk_capacity.md
+    #     - ch376_disk_mount: ch376_disk_mount.md
+        # - ch376_disk_query
+        # - ch376_file_close
+        # - ch376_file_create
+        # - ch376_file_erase
+        # - ch376_file_open
+        # - ch376_get_descr
+        # - ch376_get_file_size
+        # - ch376_ic_get_ver
+        # - ch376_lib_version
+        # - ch376_reset_all
+        # - ch376_seek_file
+        # - ch376_set_address
+        # - ch376_set_config
+        # - ch376_set_file_name
+        # - ch376_set_usb_addr
+        # - ch376_set_usb_mode
+        # - ch376_set_usb_speed
+        # - ch376_wait_response
     - C: c.md
 
 extra_css:

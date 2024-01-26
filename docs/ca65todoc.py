@@ -99,14 +99,25 @@ for line in fileinput.input():
                 line_out = '\n'
 
             elif inst[0] == ';;@bug':
-                line_out = '!!! bug ' + ' '.join(inst[1:])
+                line_out = '!!! bug "' + ' '.join(inst[1:]) + '"'
+
+            elif ';;@```' in inst[0]:
+                if inst[0] == ';;@```':
+                    line_out = '```'
+                    line_out =  line_out + '\n'
+                else:
+                    line_out = ''.join(inst[0:])
+                    line_out =  line_out.replace(';;@','')
+
+            elif inst[0] == ';;@`':
+                line_out = '   ' .join(inst[1:])
 
             elif inst[0] == ';;@brief':
-                line_out = '***Description***\n\n'+ ' '.join(inst[1:])
-                line_out =  line_out + '\n'
+                line_out = '***Description***\n\n' + ' '.join(inst[1:])
+                #line_out =  line_out + '\n'
 
             elif inst[0] == ';;@param':
-                line_out = '* '+ '*'+inst[1] +'* ' + ' '.join(inst[2:])
+                line_out = '* '+ '*'+inst[1] + '* ' + ' '.join(inst[2:])
 
             elif ';;@input' in inst[0]:
                 if def_input_found == False:
@@ -117,7 +128,7 @@ for line in fileinput.input():
 
                 if inst[0] == ';;@inputMEM_':
                     memory = inst[0] .split('_')
-                    line_out = line_out + '*' +  memory[1] +' : '+inst[1] +' ' + ' '.join(inst[2:])
+                    line_out = line_out + '*' +  memory[1] +' : '+ inst[1] +' ' + ' '.join(inst[2:])
 
                 if inst[0] == ';;@inputA':
                     line_out = line_out + '* Accumulator : '+inst[1] +' ' + ' '.join(inst[2:])
