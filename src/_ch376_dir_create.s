@@ -5,7 +5,7 @@
 .export  _ch376_dir_create
 .export  ch376_dir_create
 
-.import _ch376_wait_response
+.import ch376_wait_response
 
 .proc _ch376_dir_create
     ;;@proto unsigned char ch376_dir_create();

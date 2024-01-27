@@ -4,8 +4,6 @@
 .export _ch376_set_usb_speed
 .export ch376_set_usb_speed
 
-
-
 .proc _ch376_set_usb_speed
     ;;@proto void          ch376_set_usb_speed(unsigned char speed);
     ;;@brief Set usb mode

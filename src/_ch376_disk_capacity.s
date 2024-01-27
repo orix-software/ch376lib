@@ -3,7 +3,7 @@
 .include "include/ch376.inc"
 
 .importzp ptr1
-.import _ch376_wait_response
+.import ch376_wait_response
 
 .export  _ch376_disk_capacity
 .export  ch376_disk_capacity

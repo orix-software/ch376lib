@@ -1,4 +1,4 @@
-.import _ch376_wait_response
+.import ch376_wait_response
 .export _ch376_disk_mount
 .export ch376_disk_mount
 
