@@ -14,6 +14,7 @@
 
 .proc ch376_check_exist
     ;;@brief If ch376 is present, it will return $AA
+    ;;@modifyA
     ;;@returnsA $AA if it's OK
     ;;@```ca65
     ;;@`  jsr       ch376_check_exist

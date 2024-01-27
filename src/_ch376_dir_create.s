@@ -14,6 +14,9 @@
 
 .proc ch376_dir_create
     ;;@brief create a folder
+    ;;@modifyA
+    ;;@modifyX From ch376_wait_response_call
+    ;;@modifyY From ch376_wait_response_call
     ;;@returnsA ch376 status values
     ;;@```ca65
     ;;@`  jsr       ch376_dir_create

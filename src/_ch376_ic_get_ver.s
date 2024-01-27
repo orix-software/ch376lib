@@ -6,13 +6,14 @@
 
 .proc _ch376_ic_get_ver
     ;;@proto unsigned char ch376_ic_get_version(void);
-    ;;@brief get version
+    ;;@brief Get ch376 firmware version
     ;;@returns ch376 firmware version
     ;;Follow next routine
 .endproc
 
 .proc ch376_ic_get_ver
-    ;;@brief get version
+    ;;@brief Get ch376 firmware version
+    ;;@modifyA
     ;;@returnsA ch376 firmware version
     ;;@```ca65
     ;;@`  jsr       ch376_ic_get_ver

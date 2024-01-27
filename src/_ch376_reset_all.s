@@ -12,6 +12,9 @@
 
 .proc ch376_reset_all
     ;;@brief reset CH376
+    ;;@modifyA
+    ;;@modifyX
+    ;;@modifyY
     ;;@```ca65
     ;;@`  jsr       ch376_reset_all
     ;;@`  rts

@@ -20,6 +20,9 @@
     ;;@brief set file_name
     ;;@inputA Low ptr adress of the string, terminated by 0
     ;;@inputY High ptr adress of the string, terminated by 0
+    ;;@modifyMEM_RES
+    ;;@modifyA
+    ;;@modifyY
     ;;@```ca65
     ;;@`  lda       #<myfile
     ;;@`  ldy       #>myfile
@@ -39,13 +42,14 @@
 
 loop:
     lda     (RES),y
-
     beq     end                         ; we reached 0 value
+
     cmp     #'a'                       ; 'a'
     bcc     skip
     cmp     #$7B                        ; 'z'
     bcs     skip
     sbc     #$1F
+
 skip:
     sta     CH376_DATA
     iny

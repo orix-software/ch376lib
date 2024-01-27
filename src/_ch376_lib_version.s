@@ -15,6 +15,7 @@
 
 .proc ch376_lib_version
     ;;@brief Get lib version
+    ;;@modifyA
     ;;@returnsA ch376 lib version
     ;;@```ca65
     ;;@`  jsr       ch376_lib_version

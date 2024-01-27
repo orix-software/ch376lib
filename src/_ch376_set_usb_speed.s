@@ -13,6 +13,7 @@
 .proc ch376_set_usb_speed
     ;;@brief Set usb mode
     ;;@inputA The speed for usb
+    ;;@modifyX
     ;;@```ca65
     ;;@`  lda       #$02
     ;;@`  jsr       ch376_set_usb_speed

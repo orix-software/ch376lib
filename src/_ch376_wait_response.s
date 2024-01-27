@@ -12,6 +12,9 @@
 
 .proc ch376_wait_response
     ;;@brief Perform wait_response. It's not needed to call because some commands already perform ch376_wait_response
+    ;;@modifyA
+    ;;@modifyX
+    ;;@modifyY
     ;;@returnsA "ch376 status" value (or return 1 if usb controller does not respond)
     ;;@```ca65
     ;;@`  jsr       ch376_wait_response

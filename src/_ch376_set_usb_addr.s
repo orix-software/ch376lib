@@ -12,7 +12,9 @@
 .proc ch376_set_usb_addr
     ;;@brief set usb_address
     ;;@inputA The address to set
+    ;;@modifyX
     ;;@```ca65
+    ;;@`; Set usb addr
     ;;@`  lda       #$02
     ;;@`  jsr       ch376_set_usb_addr
     ;;@`  rts

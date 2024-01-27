@@ -135,11 +135,11 @@ for line in fileinput.input():
                     line_out = line_out + '*' +  memory[1] + ' '.join(inst[1:])
 
                 if inst[0] == ';;@modifyA':
-                    line_out = line_out + '* Accumulator' + ' '.join(inst[1:])
+                    line_out = line_out + '* Accumulator ' + ' '.join(inst[1:])
                 if inst[0] == ';;@modifyX':
-                    line_out = line_out + '* X Register' + ' '.join(inst[1:])
+                    line_out = line_out + '* X Register ' + ' '.join(inst[1:])
                 if inst[0] == ';;@modifyY':
-                    line_out = line_out + '* Y Register' + ' '.join(inst[1:])
+                    line_out = line_out + '* Y Register ' + ' '.join(inst[1:])
 
             elif ';;@input' in inst[0]:
                 if def_input_found == False:

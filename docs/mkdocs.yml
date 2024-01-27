@@ -1,4 +1,4 @@
-site_name: CH376 LIB DOCUMENTATION 2024.2
+site_name: CH376 LIB DOCUMENTATION
 
 markdown_extensions:
     - pymdownx.highlight
@@ -54,7 +54,12 @@ theme:
 
 nav:
     - Introduction: index.md
-    - Assembly: assembly.md
+    - Versions:
+        - 2024.2:
+            - Assembly: 2024.2/assembly.md
+            - ch376.inc: 2024.2/ch376.inc.md
+            - C: 2024.2/c.md
+
     # - Routines:
     #     - ch376_check_exist: api/ch376_check_exist.md
     #     - ch376_dir_create: ch376_dir_create.md
@@ -78,7 +83,6 @@ nav:
         # - ch376_set_usb_mode
         # - ch376_set_usb_speed
         # - ch376_wait_response
-    - C: c.md
 
 extra_css:
     - stylesheets/extra.css

@@ -35,6 +35,9 @@
     ;;@inputY second byte
     ;;@inputX third byte byte
     ;;@inputMEM_RES Fourth byte
+    ;;@modifyA
+    ;;@modifyX from ch376_wait_response call
+    ;;@modifyY from ch376_wait_response call
     ;;@returnsA ch376 status values
     ;;@```ca65
     ;;@`  lda       #$04

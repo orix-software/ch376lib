@@ -12,6 +12,7 @@
 
 .proc ch376_set_address
     ;;@brief set usb address
+    ;;@modifyX
     ;;@```ca65
     ;;@`  lda       #$02
     ;;@`  jsr       ch376_set_address

@@ -12,6 +12,7 @@
 .proc ch376_set_config
     ;;@brief set config for usb device
     ;;@inputA       config value
+    ;;@modifyX
     ;;@```ca65
     ;;@`  lda       #$02
     ;;@`  jsr       ch376_set_config

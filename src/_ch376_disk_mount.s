@@ -13,6 +13,9 @@
 
 .proc ch376_disk_mount
     ;;@brief perform a disk mount
+    ;;@modifyA
+    ;;@modifyX From ch376_wait_response_call
+    ;;@modifyY From ch376_wait_response_call
     ;;@returnsA ch376 status values
     ;;@```ca65
     ;;@`  jsr       ch376_disk_mount
