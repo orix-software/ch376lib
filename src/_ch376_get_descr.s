@@ -1,7 +1,7 @@
 .include "telestrat.inc"
 .include "include/ch376.inc"
 
-.import ch376_wait_response
+.import gch376_wait_response
 
 .export _ch376_get_descr
 .export ch376_get_descr
