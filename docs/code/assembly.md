@@ -35,6 +35,13 @@ create a folder
 
 * Accumulator : ch376 status values
 
+***Example***
+
+```ca65
+ jsr ch376_dir_create
+ ; check accumulator here ch376_wait_response had been launched by ch376_dir_create
+```
+
 
 
 ## ch376_disk_capacity
@@ -57,6 +64,13 @@ perform a disk mount
 
 * Accumulator : ch376 status values
 
+***Example***
+
+```ca65
+ jsr ch376_disk_mount
+ ; check accumulator here ch376_wait_response had been launched by ch376_disk_mount
+```
+
 
 
 ## ch376_disk_query
@@ -66,10 +80,21 @@ perform a disk mount
 
 ## ch376_file_close
 
+***Description***
+
+Close file
+
 
 ***Returns***
 
-* Accumulator : ch376 status values
+* Accumulator : 'ch376 status' value
+
+***Example***
+
+```ca65
+ jsr ch376_file_close
+ ; check accumulator here ch376_wait_response had been launched by ch376_file_close
+```
 
 
 
@@ -82,7 +107,14 @@ create file
 
 ***Returns***
 
-* Accumulator : ch376 status values
+* Accumulator : ch376 status value
+
+***Example***
+
+```ca65
+ jsr ch376_file_create
+ ; check accumulator here ch376_wait_response had been launched by ch376_file_create
+```
 
 
 
@@ -95,7 +127,14 @@ Erase file
 
 ***Returns***
 
-* Accumulator : ch376 status values
+* Accumulator : ch376 status value
+
+***Example***
+
+```ca65
+ jsr ch376_file_erase
+ ; check accumulator here ch376_wait_response had been launched by ch376_file_erase
+```
 
 
 
@@ -108,24 +147,42 @@ open file
 
 ***Returns***
 
-* Accumulator : ch376 status values
+* Accumulator : 'ch376 status' value
+
+***Example***
+
+```ca65
+ jsr ch376_file_erase
+ ; check accumulator here ch376_wait_response had been launched by ch376_file_open
+```
 
 
 
 ## ch376_get_descr
-
-
-***Returns***
-
-* Accumulator : ch376 status values
 
 ***Description***
 
 Get usb descr device
 
 
+***Returns***
+
+* Accumulator : ch376 status values
+
+***Example***
+
+```ca65
+ jsr ch376_get_descr
+ ; check accumulator here ch376_wait_response had been launched by ch376_get_descr
+```
+
+
 
 ## ch376_get_file_size
+
+***Description***
+
+Get file size
 
 !!! bug "Impossible to use"
 
@@ -140,6 +197,13 @@ get version
 ***Returns***
 
 * Accumulator : ch376 firmware version
+
+***Example***
+
+```ca65
+ jsr ch376_ic_get_ver
+ ; check accumulator for Version (integer value)
+```
 
 
 
@@ -201,6 +265,18 @@ Seek file. Performs a wait_response
 
 * Accumulator : ch376 status values
 
+***Example***
+
+```ca65
+ lda #$04
+ sta RES
+ lda #$01
+ ldy #$02
+ ldx #$03
+ jsr ch376_seek_file
+ ; check accumulator here ch376_wait_response had been launched by ch376_seek_file
+```
+
 !!! note "Not tested"
 
 
@@ -210,6 +286,13 @@ Seek file. Performs a wait_response
 
 set usb address
 
+***Example***
+
+```ca65
+ lda #$02
+ jsr ch376_set_address
+```
+
 
 
 ## ch376_set_config
@@ -217,6 +300,16 @@ set usb address
 ***Description***
 
 set config for usb device
+
+***Input***
+
+* Accumulator : config value
+***Example***
+
+```ca65
+ lda #$02
+ jsr ch376_set_config
+```
 
 
 
@@ -230,6 +323,17 @@ set file_name
 
 * Accumulator : Low ptr adress of the string, terminated by 0
 * Y Register : High ptr adress of the string, terminated by 0
+***Example***
+
+```ca65
+ lda #<myfile
+ ldy #>myfile
+ jsr ch376_set_file_name
+ rts
+myfile:
+ .byte "hello.txt"
+```
+
 
 
 ## ch376_set_usb_addr
@@ -241,6 +345,14 @@ set usb_address
 ***Input***
 
 * Accumulator : The address to set
+***Example***
+
+```ca65
+ lda #$02
+ jsr ch376_set_usb_addr
+ rts
+```
+
 
 
 ## ch376_set_usb_mode
@@ -252,6 +364,12 @@ Set usb mode
 ***Input***
 
 * Accumulator : The usb mode to set
+***Example***
+
+```ca65
+ lda #CH376_USB_MODE_HOST_RESET
+ jsr ch376_set_usb_mode
+ rts
 
 
 ## ch376_set_usb_speed
@@ -263,14 +381,29 @@ Set usb mode
 ***Input***
 
 * Accumulator : The speed for usb
+***Example***
+
+```ca65
+ lda #$02
+ jsr ch376_set_usb_speed
+ rts
 
 
 ## ch376_wait_response
 
+***Description***
+
+Perform wait_response. It's not needed to call because some commands already perform ch376_wait_response
+
 
 ***Returns***
 
-* Accumulator : ch376 status values (1 return 1 if usb controller does not respond)
+* Accumulator : "ch376 status" value (or return 1 if usb controller does not respond)
 
+***Example***
+
+```ca65
+ jsr ch376_wait_response
+ rts
 
 

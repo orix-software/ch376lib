@@ -13,10 +13,15 @@
 
 .proc ch376_ic_get_ver
     ;;@brief get version
+    ;;@returnsA ch376 firmware version
+    ;;@```ca65
+    ;;@`  jsr       ch376_ic_get_ver
+    ;;@`  ; check accumulator for Version (integer value)
+    ;;@```
     lda     #CH376_GET_IC_VER
     sta     CH376_COMMAND
     lda     CH376_DATA
     and     #%00111111 ; A contains revision
-    ;;@returnsA ch376 firmware version
+
     rts
 .endproc

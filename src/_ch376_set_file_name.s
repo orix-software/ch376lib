@@ -20,6 +20,14 @@
     ;;@brief set file_name
     ;;@inputA Low ptr adress of the string, terminated by 0
     ;;@inputY High ptr adress of the string, terminated by 0
+    ;;@```ca65
+    ;;@`  lda       #<myfile
+    ;;@`  ldy       #>myfile
+    ;;@`  jsr       ch376_set_file_name
+    ;;@`  rts
+    ;;@`myfile:
+    ;;@` .byte "hello.txt"
+    ;;@```
 
     sta     RES
     sty     RES+1

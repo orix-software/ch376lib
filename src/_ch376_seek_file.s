@@ -36,6 +36,15 @@
     ;;@inputX third byte byte
     ;;@inputMEM_RES Fourth byte
     ;;@returnsA ch376 status values
+    ;;@```ca65
+    ;;@`  lda       #$04
+    ;;@`  sta       RES
+    ;;@`  lda       #$01
+    ;;@`  ldy       #$02
+    ;;@`  ldx       #$03
+    ;;@`  jsr       ch376_seek_file
+    ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_seek_file
+    ;;@```
     ;;@note Not tested
     pha
     lda     #CH376_BYTE_LOCATE
@@ -46,5 +55,5 @@
     stx     CH376_DATA
     lda     RES
     sta     CH376_DATA
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc

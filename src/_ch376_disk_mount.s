@@ -14,7 +14,11 @@
 .proc ch376_disk_mount
     ;;@brief perform a disk mount
     ;;@returnsA ch376 status values
+    ;;@```ca65
+    ;;@`  jsr       ch376_disk_mount
+    ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_disk_mount
+    ;;@```
     lda     #CH376_DISK_MOUNT
     sta     CH376_COMMAND
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc

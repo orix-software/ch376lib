@@ -19,7 +19,7 @@
     ;;@bug Impossible to use
     lda     #CH376_DISK_CAPACITY
     sta     CH376_COMMAND
-    jsr     _ch376_wait_response
+    jsr     ch376_wait_response
 
     lda     #CH376_RD_USB_DATA0
     sta     CH376_COMMAND

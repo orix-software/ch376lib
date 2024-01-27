@@ -12,9 +12,13 @@
     ;;@returns ch376 status values
 .endproc
 
-; A contains 0 if it needs to update length
 .proc ch376_file_close
-    ;;@returnsA ch376 status values
+    ;;@brief Close file
+    ;;@returnsA 'ch376 status' value
+    ;;@```ca65
+    ;;@`  jsr       ch376_file_close
+    ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_file_close
+    ;;@```
     ldx     #CH376_FILE_CLOSE
     stx     CH376_COMMAND
 .IFPC02
@@ -25,5 +29,5 @@
     lda     #$00
     sta     CH376_DATA
 .endif
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc

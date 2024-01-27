@@ -15,7 +15,11 @@
 .proc ch376_dir_create
     ;;@brief create a folder
     ;;@returnsA ch376 status values
+    ;;@```ca65
+    ;;@`  jsr       ch376_dir_create
+    ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_dir_create
+    ;;@```
     lda     #CH376_DIR_CREATE
     sta     CH376_COMMAND
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc

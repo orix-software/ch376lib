@@ -70,7 +70,7 @@ erase file
 
 ***Returns***
 
-ch376 status values
+ch376 status value
 
 
 ## unsigned char ch376_file_open(void);
@@ -81,7 +81,7 @@ open file
 
 ***Returns***
 
-ch376 status values
+'ch376 status' value
 
 
 ## unsigned char ch376_get_descr(unsigned char mode);
@@ -203,6 +203,6 @@ Perform wait_response
 
 ***Returns***
 
-ch376 status values
+"ch376 status" values
 
 

@@ -13,10 +13,14 @@
 .endproc
 
 .proc ch376_get_descr
-    ;;@returnsA ch376 status values
     ;;@brief Get usb descr device
+    ;;@returnsA ch376 status values
+    ;;@```ca65
+    ;;@`  jsr       ch376_get_descr
+    ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_get_descr
+    ;;@```
     ldx     #CH376_CMD_GET_DESCR
     stx     CH376_COMMAND
     sta     CH376_DATA
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc

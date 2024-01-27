@@ -14,8 +14,12 @@
 
 .proc ch376_file_create
     ;;@brief create file
-    ;;@returnsA ch376 status values
+    ;;@returnsA ch376 status value
+    ;;@```ca65
+    ;;@`  jsr       ch376_file_create
+    ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_file_create
+    ;;@```
     lda     #CH376_CMD_FILE_CREATE
     sta     CH376_COMMAND
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc

@@ -13,6 +13,7 @@
 .endproc
 
 .proc ch376_get_file_size
+    ;;@brief Get file size
     ;;@bug Impossible to use
     lda     #CH376_GET_FILE_SIZE
     sta     CH376_COMMAND

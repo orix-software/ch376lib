@@ -10,13 +10,17 @@
 .proc _ch376_file_erase
     ;;@proto unsigned char ch376_file_erase();
     ;;@brief erase file
-    ;;@returns ch376 status values
+    ;;@returns ch376 status value
 .endproc
 
 .proc ch376_file_erase
     ;;@brief Erase file
-    ;;@returnsA ch376 status values
+    ;;@returnsA ch376 status value
+    ;;@```ca65
+    ;;@`  jsr       ch376_file_erase
+    ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_file_erase
+    ;;@```
     lda     #CH376_FILE_ERASE
     sta     CH376_COMMAND
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc

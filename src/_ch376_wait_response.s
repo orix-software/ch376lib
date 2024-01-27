@@ -8,12 +8,15 @@
 .proc _ch376_wait_response
     ;;@proto unsigned char ch376_wait_response(void);
     ;;@brief Perform wait_response
-    ;;@returns ch376 status values
+    ;;@returns "ch376 status" values
 .endproc
 
 .proc ch376_wait_response
-    ;;@returnsA ch376 status values (1 return 1 if usb controller does not respond)
-
+    ;;@brief Perform wait_response. It's not needed to call because some commands already perform ch376_wait_response
+    ;;@returnsA "ch376 status" value (or return 1 if usb controller does not respond)
+    ;;@```ca65
+    ;;@`  jsr       ch376_wait_response
+    ;;@`  rts
     ldy     #$FF
 
 loop3:

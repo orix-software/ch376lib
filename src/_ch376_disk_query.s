@@ -16,7 +16,7 @@
     ;;@bug Impossible to use
     lda     #CH376_DISK_QUERY
     sta     CH376_COMMAND
-    jsr     _ch376_wait_response
+    jsr     ch376_wait_response
 
     ldy     #$00
     lda     CH376_DATA
