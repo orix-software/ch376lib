@@ -1,7 +1,7 @@
 .include "telestrat.inc"
 .include "include/ch376.inc"
 
-.import gch376_wait_response
+.import ch376_wait_response
 
 .export _ch376_get_descr
 .export ch376_get_descr
@@ -18,6 +18,7 @@
     ;;@```ca65
     ;;@`  jsr       ch376_get_descr
     ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_get_descr
+    ;;@`  rts
     ;;@```
     ldx     #CH376_CMD_GET_DESCR
     stx     CH376_COMMAND

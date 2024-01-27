@@ -18,8 +18,9 @@
     ;;@```ca65
     ;;@`  jsr       ch376_file_erase
     ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_file_open
+    ;;@`  rts
     ;;@```
     lda     #CH376_FILE_OPEN
     sta     CH376_COMMAND
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc

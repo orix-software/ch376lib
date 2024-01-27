@@ -110,7 +110,7 @@ for line in fileinput.input():
                     line_out =  line_out + '\n'
                 else:
                     line_out = ''.join(inst[0:])
-                    line_out =  '***Example***\n\n' + line_out.replace(';;@','')
+                    line_out =  '\n***Example***\n\n' + line_out.replace(';;@','')
 
             elif ';;@`' in inst[0]:
                 line_out = ' '.join(inst[0:])
@@ -122,6 +122,24 @@ for line in fileinput.input():
 
             elif inst[0] == ';;@param':
                 line_out = '* '+ '*'+inst[1] + '* ' + ' '.join(inst[2:])
+
+            elif ';;@modify' in inst[0]:
+                if def_modify_found == False:
+                    line_out = '\n***Modify***\n\n'
+                    def_modify_found = True
+                else:
+                    line_out = ""
+
+                if inst[0] == ';;@modifyMEM_':
+                    memory = inst[0] .split('_')
+                    line_out = line_out + '*' +  memory[1] + ' '.join(inst[1:])
+
+                if inst[0] == ';;@modifyA':
+                    line_out = line_out + '* Accumulator' + ' '.join(inst[1:])
+                if inst[0] == ';;@modifyX':
+                    line_out = line_out + '* X Register' + ' '.join(inst[1:])
+                if inst[0] == ';;@modifyY':
+                    line_out = line_out + '* Y Register' + ' '.join(inst[1:])
 
             elif ';;@input' in inst[0]:
                 if def_input_found == False:
@@ -317,6 +335,7 @@ for line in fileinput.input():
                 def_proc = True
                 def_return_found = False
                 def_input_found = False
+                def_modify_found = False
 
                 # Ne prend pas en compte un Ã©ventuel commentaire sur la ligne .proc
                 # TODO: Ajouter un @brief pour le prendre en compte?

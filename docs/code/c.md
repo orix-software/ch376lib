@@ -206,3 +206,11 @@ Perform wait_response
 "ch376 status" values
 
 
+## void ch376_wr_usb_data(char *data);
+
+***Description***
+
+Send data to usb device. First byte must be the the length to send
+
+
+

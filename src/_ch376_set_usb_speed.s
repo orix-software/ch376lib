@@ -17,6 +17,7 @@
     ;;@`  lda       #$02
     ;;@`  jsr       ch376_set_usb_speed
     ;;@`  rts
+    ;;@```
     ldx     #CH276_SET_USB_SPEED ;
     stx     CH376_COMMAND
     sta     CH376_DATA

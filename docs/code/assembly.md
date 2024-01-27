@@ -11,6 +11,7 @@ If ch376 is present, it will return $AA
 
 * Accumulator : $AA if it's OK
 
+
 ***Example***
 
 ```ca65
@@ -34,6 +35,7 @@ create a folder
 ***Returns***
 
 * Accumulator : ch376 status values
+
 
 ***Example***
 
@@ -64,6 +66,7 @@ perform a disk mount
 
 * Accumulator : ch376 status values
 
+
 ***Example***
 
 ```ca65
@@ -89,6 +92,7 @@ Close file
 
 * Accumulator : 'ch376 status' value
 
+
 ***Example***
 
 ```ca65
@@ -108,6 +112,7 @@ create file
 ***Returns***
 
 * Accumulator : ch376 status value
+
 
 ***Example***
 
@@ -129,11 +134,14 @@ Erase file
 
 * Accumulator : ch376 status value
 
+
 ***Example***
 
 ```ca65
  jsr ch376_file_erase
- ; check accumulator here ch376_wait_response had been launched by ch376_file_erase
+ ; Check accumulator here :
+ ; Ch376_wait_response had been launched
+ ; By ch376_file_erase
 ```
 
 
@@ -149,11 +157,13 @@ open file
 
 * Accumulator : 'ch376 status' value
 
+
 ***Example***
 
 ```ca65
  jsr ch376_file_erase
  ; check accumulator here ch376_wait_response had been launched by ch376_file_open
+ rts
 ```
 
 
@@ -169,11 +179,13 @@ Get usb descr device
 
 * Accumulator : ch376 status values
 
+
 ***Example***
 
 ```ca65
  jsr ch376_get_descr
  ; check accumulator here ch376_wait_response had been launched by ch376_get_descr
+ rts
 ```
 
 
@@ -198,6 +210,7 @@ get version
 
 * Accumulator : ch376 firmware version
 
+
 ***Example***
 
 ```ca65
@@ -217,6 +230,7 @@ Get lib version
 ***Returns***
 
 * Accumulator : ch376 lib version
+
 
 ***Example***
 
@@ -239,6 +253,7 @@ Get lib version
 ***Description***
 
 reset CH376
+
 
 ***Example***
 
@@ -265,6 +280,7 @@ Seek file. Performs a wait_response
 
 * Accumulator : ch376 status values
 
+
 ***Example***
 
 ```ca65
@@ -286,6 +302,7 @@ Seek file. Performs a wait_response
 
 set usb address
 
+
 ***Example***
 
 ```ca65
@@ -304,6 +321,7 @@ set config for usb device
 ***Input***
 
 * Accumulator : config value
+
 ***Example***
 
 ```ca65
@@ -323,6 +341,7 @@ set file_name
 
 * Accumulator : Low ptr adress of the string, terminated by 0
 * Y Register : High ptr adress of the string, terminated by 0
+
 ***Example***
 
 ```ca65
@@ -345,6 +364,7 @@ set usb_address
 ***Input***
 
 * Accumulator : The address to set
+
 ***Example***
 
 ```ca65
@@ -364,12 +384,15 @@ Set usb mode
 ***Input***
 
 * Accumulator : The usb mode to set
+
 ***Example***
 
 ```ca65
  lda #CH376_USB_MODE_HOST_RESET
  jsr ch376_set_usb_mode
  rts
+```
+
 
 
 ## ch376_set_usb_speed
@@ -381,12 +404,15 @@ Set usb mode
 ***Input***
 
 * Accumulator : The speed for usb
+
 ***Example***
 
 ```ca65
  lda #$02
  jsr ch376_set_usb_speed
  rts
+```
+
 
 
 ## ch376_wait_response
@@ -400,10 +426,44 @@ Perform wait_response. It's not needed to call because some commands already per
 
 * Accumulator : "ch376 status" value (or return 1 if usb controller does not respond)
 
+
 ***Example***
 
 ```ca65
  jsr ch376_wait_response
  rts
+```
+
+
+
+## ch376_wr_usb_data
+
+***Description***
+
+Send data to usb device. First byte must be the the length to send
+
+***Input***
+
+* Accumulator : Low byte of ptr data
+* Y Register : High byte of ptr data
+
+***Modify***
+
+* Accumulator
+* Y Register
+* X Register
+
+***Example***
+
+```ca65
+ lda #<data
+ ldy #>data
+ jsr ch376_wr_usb_data
+ rts
+data:
+ ; length, set port feature, set feature, port_power,0, Id port, 0, 0, 0
+ .byte 8,$23,3,8,0,1,0,0
+```
+
 
 

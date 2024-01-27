@@ -1,4 +1,3 @@
-
 .include "telestrat.inc"
 .include "include/ch376.inc"
 
@@ -17,6 +16,7 @@
     ;;@```ca65
     ;;@`  jsr       ch376_wait_response
     ;;@`  rts
+    ;;@```
     ldy     #$FF
 
 loop3:

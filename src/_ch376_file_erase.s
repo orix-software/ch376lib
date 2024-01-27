@@ -17,7 +17,9 @@
     ;;@returnsA ch376 status value
     ;;@```ca65
     ;;@`  jsr       ch376_file_erase
-    ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_file_erase
+    ;;@`  ; Check accumulator here :
+    ;;@`  ; Ch376_wait_response had been launched
+    ;;@`  ; By ch376_file_erase
     ;;@```
     lda     #CH376_FILE_ERASE
     sta     CH376_COMMAND
