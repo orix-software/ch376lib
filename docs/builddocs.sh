@@ -8,6 +8,12 @@ echo "" >> docs/code/c.md
 pwd
 VERSION=`cat VERSION`
 
+echo "# Assembly" > docs/code/$VERSION/assembly.md
+echo "" >> docs/code/$VERSION/assembly.md
+
+echo "# C" > docs/code/c.md
+echo "" >> docs/code/c.md
+
 echo $VERSION
 mkdir docs/code/$VERSION
 for I in `ls src/*.s`; do
