@@ -18,7 +18,7 @@
 
 .proc _ch376_set_bytes_read
     ;;@proto void          ch376_set_bytes_read(unsigned int nb);
-    ;; Follow next .proc
+    ;Follow next .proc
 .endproc
 
 

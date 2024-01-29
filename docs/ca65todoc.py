@@ -130,9 +130,9 @@ for line in fileinput.input():
                 else:
                     line_out = ""
 
-                if inst[0] == ';;@modifyMEM_':
+                if ';;@modifyMEM_' in inst[0]:
                     memory = inst[0] .split('_')
-                    line_out = line_out + '*' +  memory[1] + ' '.join(inst[1:])
+                    line_out = line_out + '* ' +  memory[1] + ' '.join(inst[1:])
 
                 if inst[0] == ';;@modifyA':
                     line_out = line_out + '* Accumulator ' + ' '.join(inst[1:])
@@ -148,9 +148,9 @@ for line in fileinput.input():
                 else:
                     line_out = ""
 
-                if inst[0] == ';;@inputMEM_':
+                if  ';;@inputMEM_' in inst[0]:
                     memory = inst[0] .split('_')
-                    line_out = line_out + '*' +  memory[1] +' : '+ inst[1] +' ' + ' '.join(inst[2:])
+                    line_out = line_out + '* ' +  memory[1] +' : '+ inst[1] +' ' + ' '.join(inst[2:])
 
                 if inst[0] == ';;@inputA':
                     line_out = line_out + '* Accumulator : '+inst[1] +' ' + ' '.join(inst[2:])

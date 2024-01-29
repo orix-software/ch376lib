@@ -513,6 +513,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ch376_set_bytes_read" class="md-nav__link">
+    ch376_set_bytes_read
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ch376_set_bytes_write" class="md-nav__link">
+    ch376_set_bytes_write
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ch376_set_config" class="md-nav__link">
     ch376_set_config
   </a>
@@ -766,6 +780,20 @@
         <li class="md-nav__item">
   <a href="#ch376_set_address" class="md-nav__link">
     ch376_set_address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ch376_set_bytes_read" class="md-nav__link">
+    ch376_set_bytes_read
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ch376_set_bytes_write" class="md-nav__link">
+    ch376_set_bytes_write
   </a>
   
 </li>
@@ -1072,6 +1100,7 @@
 <li>Accumulator : First byte</li>
 <li>Y Register : second byte</li>
 <li>X Register : third byte byte</li>
+<li>RES : Fourth byte</li>
 </ul>
 <p><strong><em>Modify</em></strong></p>
 <ul>
@@ -1106,50 +1135,42 @@
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">lda</span><span class="w"> </span><span class="p">#</span><span class="mh">$02</span>
 <span class="w"> </span><span class="k">jsr</span><span class="w"> </span><span class="n">ch376_set_address</span>
 </code></pre></div>
-<p>endproc
-proc ch376_set_bytes_read
-   ;;@brief Set bytes to read. Manage only 16 bits. Others bytes are set to 0 to provide 32 bits integer to ch376 chip
-   ;;@inputA       Low value
-   ;;@inputY       High value
-   ;;@modifyX
-   ;;@modifyA
-   ;;@<code>ca65
-   ;;@`  lda       #$02
-   ;;@`  ldy       #$10
-   ;;@`  jsr       ch376_set_bytes_read
-   ;;@</code>
-   ldx     #CH376_BYTE_READ
-   .byt     $2C                ; jump 2 bytes with the hack bit $xxxx
-rite_entry_point:
-   ldx     #CH376_BYTE_WRITE
-   stx     CH376_COMMAND
-   sta     CH376_DATA
-   sty     CH376_DATA
-IFPC02
-pc02
-   stz     CH376_DATA
-   stz     CH376_DATA
-p02
-else
-   lda     #$00
-   sta     CH376_DATA
-   sta     CH376_DATA
-endif
-   jmp     _ch376_wait_response
-endproc
-proc ch376_set_bytes_write
-   ;;@brief Set bytes to write. Manage only 16 bits. Others bytes are set to 0 to provide 32 bits integer to ch376 chip
-   ;;@inputA       Low value
-   ;;@inputY       High value
-   ;;@modifyX
-   ;;@modifyA
-   ;;@<code>ca65
-   ;;@`  lda       #$02
-   ;;@`  ldy       #$10
-   ;;@`  jsr       ch376_set_bytes_write
-   ;;@</code>
-   jmp     ch376_set_bytes_read::write_entry_point
-endproc</p>
+<h2 id="ch376_set_bytes_read">ch376_set_bytes_read</h2>
+<p><strong><em>Description</em></strong></p>
+<p>Set bytes to read. Manage only 16 bits. Others bytes are set to 0 to provide 32 bits integer to ch376 chip</p>
+<p><strong><em>Input</em></strong></p>
+<ul>
+<li>Accumulator : Low value</li>
+<li>Y Register : High value</li>
+</ul>
+<p><strong><em>Modify</em></strong></p>
+<ul>
+<li>X Register </li>
+<li>Accumulator </li>
+</ul>
+<p><strong><em>Example</em></strong></p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">lda</span><span class="w"> </span><span class="p">#</span><span class="mh">$02</span>
+<span class="w"> </span><span class="k">ldy</span><span class="w"> </span><span class="p">#</span><span class="mh">$10</span>
+<span class="w"> </span><span class="k">jsr</span><span class="w"> </span><span class="n">ch376_set_bytes_read</span>
+</code></pre></div>
+<h2 id="ch376_set_bytes_write">ch376_set_bytes_write</h2>
+<p><strong><em>Description</em></strong></p>
+<p>Set bytes to write. Manage only 16 bits. Others bytes are set to 0 to provide 32 bits integer to ch376 chip</p>
+<p><strong><em>Input</em></strong></p>
+<ul>
+<li>Accumulator : Low value</li>
+<li>Y Register : High value</li>
+</ul>
+<p><strong><em>Modify</em></strong></p>
+<ul>
+<li>X Register </li>
+<li>Accumulator </li>
+</ul>
+<p><strong><em>Example</em></strong></p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">lda</span><span class="w"> </span><span class="p">#</span><span class="mh">$02</span>
+<span class="w"> </span><span class="k">ldy</span><span class="w"> </span><span class="p">#</span><span class="mh">$10</span>
+<span class="w"> </span><span class="k">jsr</span><span class="w"> </span><span class="n">ch376_set_bytes_write</span>
+</code></pre></div>
 <h2 id="ch376_set_config">ch376_set_config</h2>
 <p><strong><em>Description</em></strong></p>
 <p>set config for usb device</p>
@@ -1174,10 +1195,9 @@ endproc</p>
 <li>Y Register : High ptr adress of the string, terminated by 0</li>
 </ul>
 <p><strong><em>Modify</em></strong></p>
-<ul>
-<li>Accumulator </li>
-<li>Y Register </li>
-</ul>
+<p>*RES
+* Accumulator 
+* Y Register </p>
 <p><strong><em>Example</em></strong></p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">lda</span><span class="w"> </span><span class="p">#</span><span class="o">&lt;</span><span class="n">myfile</span>
 <span class="w"> </span><span class="k">ldy</span><span class="w"> </span><span class="p">#</span><span class="o">&gt;</span><span class="n">myfile</span>
@@ -1264,7 +1284,8 @@ endproc</p>
 <ul>
 <li>Accumulator </li>
 <li>Y Register </li>
-<li>X Register </li>
+<li>X Register 
+*RES</li>
 </ul>
 <p><strong><em>Example</em></strong></p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">lda</span><span class="w"> </span><span class="p">#</span><span class="o">&lt;</span><span class="n">data</span>
