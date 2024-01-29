@@ -1,5 +1,6 @@
 #define CH376_LIB_VERSION_2023_4 0x00
 #define CH376_LIB_VERSION_2024_1 0x01
+#define CH376_LIB_VERSION_2024_2 0x02
 
 /*/// "CH376 interface commands and constants" */
 
@@ -193,21 +194,20 @@
 /* Le pointeur de fichier actuel, le décalage d'octet de la position actuelle de lecture et d'écriture (longueur totale 32 bits, octet de poids faible en premier) */ 
 #define VAR_CURRENT_OFFSET          0x6C
 
-
 unsigned char ch376_check_exist(void);
 unsigned char ch376_ic_get_version(void);
-void 		  ch376_set_usb_mode(unsigned char mode);
+void          ch376_set_usb_mode(unsigned char mode);
 unsigned char ch376_disk_mount(void);
-unsigned int  ch376_seek_file(int position);// 16 bytes
+unsigned int  ch376_seek_file(long position);// 32 bytes
 
 unsigned char ch376_lib_version(void);
 
 unsigned int  ch376_file_get_info(void);
 
-void 		  ch376_set_file_name(char *filename);
+void          ch376_set_file_name(char *filename);
 unsigned char ch376_file_open(void);
-void 		  ch376_set_bytes_write(unsigned int value);
-void 		  ch376_set_bytes_read(unsigned int value);
+void          ch376_set_bytes_write(unsigned int value);
+void          ch376_set_bytes_read(unsigned int value);
 unsigned char ch376_file_create();
 unsigned char ch376_dir_create();
 unsigned char ch376_file_erase();
@@ -217,11 +217,19 @@ unsigned char ch376_file_close();
 unsigned char ch376_lib_version();
 
 // Since 2024.1
-void ch376_reset_all(void);
+void          ch376_reset_all(void);
 unsigned char ch376_wait_response(void);
-void ch376_set_usb_speed(unsigned char speed);
-void ch376_set_usb_addr(unsigned char adress);
-void ch376_set_address(unsigned char adress);
+void          ch376_set_usb_speed(unsigned char speed);
+void          ch376_set_usb_addr(unsigned char adress);
+void          ch376_set_address(unsigned char adress);
 unsigned char ch376_get_descr(unsigned char mode);
-void ch376_set_config(unsigned char config);
+void          ch376_set_config(unsigned char config);
 
+// Since 2024.2
+void          ch376_get_file_size(void);
+void          ch376_disk_query(void);
+void          ch376_disk_capacity();
+void          ch376_issue_token_x(unsigned char token);
+void          ch376_wr_usb_data(char *data);
+void          ch376_set_bytes_write(unsigned int nb);
+void          ch376_set_bytes_read(unsigned int nb);

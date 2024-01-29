@@ -1,18 +1,30 @@
-
 .include "telestrat.inc"
 .include "include/ch376.inc"
 
 .export _ch376_wait_response
 .export ch376_wait_response
 
-ch376_wait_response := _ch376_wait_response
-
 .proc _ch376_wait_response
-; 1 return 1 if usb controller does not respond
-; else A contains answer of the controller
+    ;;@proto unsigned char ch376_wait_response(void);
+    ;;@brief Perform wait_response
+    ;;@returns "ch376 status" values
+.endproc
+
+.proc ch376_wait_response
+    ;;@brief Perform wait_response. It's not needed to call because some commands already perform ch376_wait_response
+    ;;@modifyA
+    ;;@modifyX
+    ;;@modifyY
+    ;;@returnsA "ch376 status" value (or return 1 if usb controller does not respond)
+    ;;@```ca65
+    ;;@`  jsr       ch376_wait_response
+    ;;@`  rts
+    ;;@```
     ldy     #$FF
+
 loop3:
     ldx     #$FF ; merci de laisser une valeur importante car parfois en mode non debug, le controleur ne répond pas tout de suite
+
 @loop:
     lda     CH376_COMMAND
     and     #%10000000

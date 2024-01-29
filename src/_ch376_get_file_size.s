@@ -5,8 +5,16 @@
 .importzp ptr1
 
 .export  _ch376_get_file_size
+.export  ch376_get_file_size
 
 .proc _ch376_get_file_size
+    ;;@proto void          ch376_get_file_size(void);
+    ;;@bug Impossible to use
+.endproc
+
+.proc ch376_get_file_size
+    ;;@brief Get file size
+    ;;@bug Impossible to use
     lda     #CH376_GET_FILE_SIZE
     sta     CH376_COMMAND
     lda     #$68

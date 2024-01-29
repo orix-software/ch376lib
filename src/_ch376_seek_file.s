@@ -3,26 +3,60 @@
 .include "telestrat.inc"
 .include "include/ch376.inc"
 
-.import _ch376_wait_response
+.import ch376_wait_response
+
+.importzp ptr1, ptr2
+
+.import popax
 
 .export _ch376_seek_file
+.export ch376_seek_file
+
+.proc _ch376_seek_file
+    ;;@proto unsigned int  ch376_seek_file(long position);
+    ;;@brief Seek file
+    ;;@note Not tested
+    ;;@returns ch376 status values
+    sta     ptr1
+    stx     ptr1+1
+    jsr     popax
+    sta     ptr2
+    stx     RES
+
+    lda     ptr1
+    ldy     ptr1+1
+    ldx     ptr2
+.endproc
 
 ; [IN] AY : ptr
-.proc _ch376_seek_file
-
-    ldx     #CH376_BYTE_LOCATE
-    stx     CH376_COMMAND
+.proc ch376_seek_file
+    ;;@brief Seek file. Performs a wait_response
+    ;;@inputA First byte
+    ;;@inputY second byte
+    ;;@inputX third byte byte
+    ;;@inputMEM_RES Fourth byte
+    ;;@modifyA
+    ;;@modifyX from ch376_wait_response call
+    ;;@modifyY from ch376_wait_response call
+    ;;@returnsA ch376 status values
+    ;;@```ca65
+    ;;@`  lda       #$04
+    ;;@`  sta       RES
+    ;;@`  lda       #$01
+    ;;@`  ldy       #$02
+    ;;@`  ldx       #$03
+    ;;@`  jsr       ch376_seek_file
+    ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_seek_file
+    ;;@```
+    ;;@note Not tested
+    pha
+    lda     #CH376_BYTE_LOCATE
+    sta     CH376_COMMAND
+    pla
     sta     CH376_DATA
     sty     CH376_DATA
-.IFPC02
-.pc02
-    stz     CH376_DATA
-    stz     CH376_DATA
-.p02
-.else
-    lda     #$00
+    stx     CH376_DATA
+    lda     RES
     sta     CH376_DATA
-    sta     CH376_DATA
-.endif
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc

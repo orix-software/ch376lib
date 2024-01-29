@@ -1,5 +1,6 @@
 CH376_LIB_VERSION_2023_4 = $00
 CH376_LIB_VERSION_2024_1 = $01
+CH376_LIB_VERSION_2024_2 = $02
 
 CH376_DETECTED           = $AA
 
@@ -83,13 +84,13 @@ CH376_DISK_MAX_LUN    = $5D
 
 ; CODE FOR CH376_SET_USB_MODE
 
-CH376_USB_MODE_DEVICE_INVALID                               = $00
-CH376_USB_MODE_DEVICE_OUTER_FW                              = $01
-CH376_USB_MODE_DEVICE_INNER_FW                              = $02
-CH376_SET_USB_MODE_CODE_SDCARD                              = $03
+CH376_USB_MODE_DEVICE_INVALID                           = $00
+CH376_USB_MODE_DEVICE_OUTER_FW                          = $01
+CH376_USB_MODE_DEVICE_INNER_FW                          = $02
+CH376_USB_MODE_CODE_SDCARD                              = $03
 ; The code of 06H means switch to valid USB-HOST, produce SOF package automatically.
-CH376_SET_USB_MODE_CODE_USB_HOST_SOF_PACKAGE_AUTOMATICALLY  = $06
-CH376_USB_MODE_HOST_RESET                                   = $07
+CH376_USB_MODE_CODE_USB_HOST_SOF_PACKAGE_AUTOMATICALLY  = $06
+CH376_USB_MODE_HOST_RESET                               = $07
 
 CH376_ERR_OPEN_DIR          = $41
 CH376_ERR_MISS_FILE         = $42

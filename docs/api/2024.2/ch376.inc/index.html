@@ -1,0 +1,722 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../assembly/">
+      
+      
+        <link rel="next" href="../c/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>ch376.inc - CH376 LIB DOCUMENTATION</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9f615399.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.649f08f9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CH376 LIB DOCUMENTATION" class="md-header__button md-logo" aria-label="CH376 LIB DOCUMENTATION" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CH376 LIB DOCUMENTATION
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ch376.inc
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../assembly/" class="md-tabs__link">
+          
+  
+  Versions
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CH376 LIB DOCUMENTATION" class="md-nav__button md-logo" aria-label="CH376 LIB DOCUMENTATION" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CH376 LIB DOCUMENTATION
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Versions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Versions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024.2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            2024.2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ch376.inc
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>ch376.inc</h1>
+
+<p><em>CH376_LIB_VERSION_2023_4 = $00
+</em>CH376_LIB_VERSION_2024_1 = $01
+<em>CH376_LIB_VERSION_2024_2 = $02
+*
+</em>CH376_DETECTED           = $AA
+*
+<em>CH376_NONE            = $00
+</em>CH376_GET_IC_VER      = $01
+<em>CH376_SET_BAUDRATE    = $02
+</em>CH376_GET_ENTER_SLEEP = $03
+<em>CH276_SET_USB_SPEED   = $04
+</em>CH376_RESET_ALL       = $05
+<em>CH376_CHECK_EXIST     = $06
+</em>CH376_GET_REGISTER    = $0A
+<em>CH376_GET_DEV_RATE    = $0A
+</em>CH376_SET_REGISTER    = $0B
+<em>CH376_SET_SD0         = $0B
+</em>CH376_WRITE_VAR8      = $0B
+<em>CH376_GET_FILE_SIZE   = $0C ; Get the current file length
+</em>CH376_READ_VAR32      = $0C
+<em>CH376_WRITE_VAR32     = $0D
+</em>CH376_DELAY_100US     = $0F
+<em>CH376_SET_USB_ADDR    = $13
+</em>CH376_SET_USB_MODE    = $15
+<em>CH376_TEST_CONNECT    = $16
+</em>CH376_ABORT_NAK       = $17
+<em>CH376_SET_EP0_RX      = $18
+</em>CH376_SET_EP0_TX      = $19
+<em>CH376_SET_EP1_RX      = $1A
+</em>CH376_SET_EP1_TX      = $1B
+<em>CH376_SET_EP2_RX      = $1C
+</em>CH376_SET_EP2_TX      = $1D
+<em>CH376_GET_STATUS      = $22
+</em>CH376_UNLOCK_USB      = $23 ; From CH375 datasheet
+<em>CH376_DIRTY_BUFFER    = $25
+</em>CH376_RD_USB_DATA0    = $27
+<em>CH376_RD_USB_DATA_UNLOCK = $28 ; From CH375 datasheet
+</em>CH376_WR_EP0          = $29 ; DATA3
+<em>CH376_WR_EP1          = $2A ; DATA5
+</em>CH376_WR_EP2          = $2B ; DATA7
+<em>CH376_WR_USB_DATA     = $2C
+</em>CH376_WR_REQ_DATA     = $2D
+<em>CH376_OFS_DATA        = $2E
+</em>CH376_SET_FILE_NAME   = $2F
+<em>CH376_DISK_CONNECT    = $30 ; check the disk connection status
+</em>CH376_DISK_MOUNT      = $31
+<em>CH376_FILE_OPEN       = $32
+</em>CH376_FILE_ENUM_GO    = $33
+<em>CH376_CMD_FILE_CREATE = $34
+</em>CH376_FILE_ERASE      = $35
+<em>CH376_FILE_CLOSE      = $36
+</em>CH376_DIR_INFO_READ   = $37
+<em>CH376_DIR_INFO_SAVE   = $38
+</em>CH376_BYTE_LOCATE     = $39
+<em>CH376_BYTE_READ       = $3A
+</em>CH376_BYTE_RD_GO      = $3B
+<em>CH376_BYTE_WRITE      = $3C
+</em>CH376_BYTE_WR_GO      = $3D
+<em>CH376_DISK_CAPACITY   = $3E
+</em>CH376_DISK_QUERY      = $3F
+<em>CH376_DIR_CREATE      = $40
+</em>CH376_CLR_STALL       = $41
+<em>CH376_SET_ADRESS      = $45
+</em>CH376_CMD_GET_DESCR   = $46
+<em>CH376_CMD_SET_CONFIG  = $49 ; Set USB configuration
+</em>CH376_SEC_READ        = $4B
+<em>CH376_SEC_WRITE       = $4C
+</em>CH376_AUTO_SETUP      = $4D
+<em>CH376_ISSUE_TKN_X     = $4E ; Send synchronization token and execute transactions
+</em>CH376_DISC_BOC        = $50
+<em>CH376_DISK_INIT       = $51 ; Init USB memory
+</em>CH376_DISK_RESET      = $52
+<em>CH376_DISK_SIZE       = $53 ; Get The maximum capacity of the USB memory
+</em>CH376_DISC_READ       = $54
+<em>CH376_DISK_RD_GO      = $55
+</em>CH376_DISK_WRITE      = $56
+<em>CH376_DISK_WR_GO      = $57
+</em>CH376_DISK_INQUIRY    = $58
+<em>CH376_DISK_READY      = $59
+</em>CH376_DISK_R_SENSE    = $5A
+<em>CH376_RD_DISK_SEC     = $5B
+</em>CH376_WR_DISK_SEC     = $5C
+<em>CH376_DISK_MAX_LUN    = $5D
+*
+</em>; CODE FOR CH376_SET_USB_MODE
+*
+<em>CH376_USB_MODE_DEVICE_INVALID                           = $00
+</em>CH376_USB_MODE_DEVICE_OUTER_FW                          = $01
+<em>CH376_USB_MODE_DEVICE_INNER_FW                          = $02
+</em>CH376_USB_MODE_CODE_SDCARD                              = $03
+<em>; The code of 06H means switch to valid USB-HOST, produce SOF package automatically.
+</em>CH376_USB_MODE_CODE_USB_HOST_SOF_PACKAGE_AUTOMATICALLY  = $06
+<em>CH376_USB_MODE_HOST_RESET                               = $07
+*
+</em>CH376_ERR_OPEN_DIR          = $41
+<em>CH376_ERR_MISS_FILE         = $42
+</em>CH376_ERR_FOUND_NAME       = $43
+<em>CH376_ERR_DISK_DISCON      = $82
+</em>CH376_ERR_LARGE_SECTOR         = $84
+<em>CH376_ERR_TYPE_ERROR       = $92
+</em>CH376_ERR_BPB_ERROR        = $A1
+<em>CH376_ERR_DISK_FULL        = $B1
+</em>CH376_ERR_FDT_OVER             = $B2
+<em>CH376_ERR_FILE_CLOSE       = $B4
+*
+*
+</em>CH376_USB_INT_SUCCESS      = $14
+<em>CH376_USB_INT_CONNECT      = $15
+</em>CH376_USB_INT_DISCONNECT   = $16
+<em>CH376_USB_INT_BUF_OVER         = $17
+</em>CH376_USB_INT_USB_READY    = $18
+<em>CH376_USB_INT_DISK_READ    = $1D
+</em>CH376_USB_INT_DISK_WRITE   = $1E
+<em>CH376_USB_INT_DISK_ERR         = $1F
+*
+</em>CH376_ST_RET_SUCCESS        = $51
+<em>CH376_ST_RET_ABORT          = $5F
+*
+*
+*
+</em>; / * Informations de base du système actuel * /
+<em>; / * Le bit 6 est utilisé pour indiquer la sous-classe du périphérique de stockage USB SubClass-Code, le bit 6 est 0 pour indiquer que la sous-classe est 6 et le bit 6 est 1 pour indiquer que la sous-classe est différente de 6 * /
+</em>; / * Le bit 5 est utilisé pour indiquer l'état de la configuration USB en mode périphérique USB et l'état de la connexion du périphérique USB en mode hôte USB * /
+<em>; / * En mode périphérique USB, si le bit 5 est 1, la configuration USB est terminée et les bits 5 et 0 ne sont pas configurés * /
+</em>; / * En mode hôte USB, si le bit 5 est 1, il y a un périphérique USB dans le port USB, et si le bit 5 est 0, il n'y a pas de périphérique USB dans le port USB * /
+<em>; / * Le bit 4 est utilisé pour indiquer l'état de verrouillage du tampon en mode périphérique USB. Le bit 4 est 1 signifie que le tampon USB est verrouillé et le bit 6 est 1 signifie qu'il a été libéré * /
+</em>; / * Autres bits, réservés, veuillez ne pas modifier * /
+<em>VAR_SYS_BASE_INFO           = $20
+*
+</em>; / * Nombre de tentatives d'opération de transaction USB * /
+<em>; / * Si le bit 7 est 0, il ne réessayera pas lorsque NAK est reçu, le bit 7 est 1 et le bit 6 est 0, et réessayera à l'infini lors de la réception de NAK (vous pouvez utiliser la commande CMD_ABORT_NAK pour abandonner la nouvelle tentative), le bit 7 est 1 et 6 est 1 Réessayez au plus 3 secondes lors de la réception de NAK * /
+</em>; / * Bit 5 ~ Bit 0 représente le nombre de tentatives après l'expiration du délai * /
+<em>VAR_RETRY_TIMES             = $25
+*
+</em>; / * Indicateur de bit en mode fichier hôte * /
+<em>; / * Bit 1 et Bit 0, l'indicateur du système de fichiers FAT du disque logique, 00-FAT12, 01-FAT16, 10-FAT32, 11-illégal * /
+</em>; / * Bit 2, indique si les données de la table FAT dans le tampon courant ont été modifiées, 0-non modifié, 1-modifié * /
+<em>; / * Bit 3, la longueur du fichier doit être modifiée, le fichier actuel est ajouté avec les données, 0-Aucune modification n'est pas ajoutée, 1-Ajouté et doit être modifié * /
+</em>; / * Autres bits, réservés, veuillez ne pas modifier * /
+<em>VAR_FILE_BIT_FLAG           = $26
+*
+</em>; / * État du disque et du fichier en mode fichier hôte * /
+<em>; VAR_SD_BIT_FLAG 0x30 / * Indicateur de bit de la carte SD en mode fichier hôte * /
+</em>; / * Bit 0, version de la carte SD, 0- prend uniquement en charge la première version SD, 1- prend en charge la deuxième version SD * /
+<em>; / * Bit 1, reconnaissance automatique, carte 0-SD, carte 1-MMC * /
+</em>; / * Bit 2, identification automatique, carte SD de capacité standard 0, carte SD 1 grande capacité (HC-SD) * /
+<em>; / * Bit 4, délai d'expiration de la commande ACMD41 * /
+</em>; / * Bit 5, délai d'expiration de la commande CMD1 * /
+<em>; / * Bit 6, délai d'expiration de la commande CMD58 * /
+</em>; / * Autres bits, réservés, veuillez ne pas modifier * /
+<em>VAR_DISK_STATUS             = $2B
+*
+</em>; / * L'indicateur de synchronisation du point de terminaison BULK-IN / BULK-OUT du périphérique de stockage USB * /
+<em>; / * Bit 7, indicateur de synchronisation de point de terminaison en bloc * /
+</em>; / * Bit 6, indicateur de synchronisation de point de terminaison en bloc * /
+<em>; / * Bit 5 ~ Bit 0, doit être 0 * /
+</em>VAR_UDISK_TOGGLE            = $31
+*
+<em>; / * Le numéro d'unité logique du périphérique de stockage USB * /
+</em>; / * Bit 7 ~ Bit 4, le numéro d'unité logique actuel du périphérique de stockage USB, après que CH376 initialise le périphérique de stockage USB, la valeur par défaut est d'accéder à 0 # unité logique * /
+<em>; / * Bit 3 ~ Bit 0, le numéro d'unité logique maximum du périphérique de stockage USB, plus 1 est égal au nombre d'unités logiques * /
+</em>VAR_UDISK_LUN               = $34
+*
+<em>; / * Le nombre de secteurs par cluster du disque logique * /
+</em>VAR_SEC_PER_CLUS            = $38
+<em>; / * Le numéro d'index des informations de répertoire de fichiers en cours dans le secteur * /
+</em>VAR_FILE_DIR_INDEX          = $3B
+*
+<em>; / * Le décalage de secteur du pointeur de fichier actuel dans le cluster, 0xFF pointe vers la fin du fichier, la fin du cluster * /
+</em>VAR_CLUS_SEC_OFS            = $3C
+*
+<em>;/ * Variable 32 bits / 4 octets * /
+</em>; / * Pour les disques FAT16, c'est le nombre de secteurs occupés par le répertoire racine, et pour les disques FAT32, c'est le numéro de cluster de départ du répertoire racine (longueur totale 32 bits, octet de poids faible en premier) * /
+<em>VAR_DISK_ROOT               = $44
+*
+</em>; / * Le nombre total de clusters du disque logique (la longueur totale est de 32 bits, octet de poids faible en premier) * /
+<em>VAR_DSK_TOTAL_CLUS          = $48
+*
+</em>; / * Le numéro de secteur absolu de départ du disque logique LBA (longueur totale 32 bits, octet de poids faible en premier) * /
+<em>VAR_DSK_START_LBA           = $4C
+*
+</em>; / * LBA de départ de la zone de données du disque logique (la longueur totale est de 32 bits, octet de poids faible en premier) * /
+<em>VAR_DSK_DAT_START           = $50
+*
+</em>; / * LBA correspondant aux données du tampon de données actuel du disque (longueur totale 32 bits, octet de poids faible en premier) * /
+<em>VAR_LBA_BUFFER              = $54
+*
+</em>; / * L'adresse LBA de départ du disque actuellement lu et écrit (la longueur totale est de 32 bits, octet de poids faible en premier) * /
+<em>VAR_LBA_CURRENT             = $58
+*
+</em>; / * L'adresse LBA du secteur où se trouvent les informations du répertoire de fichiers en cours (longueur totale 32 bits, octet de poids faible en premier) * /
+<em>VAR_FAT_DIR_LBA             = $5C
+*
+</em>; / * Le numéro de cluster de départ du fichier ou du répertoire (dossier) actuel (longueur totale 32 bits, octet de poids faible en premier) * /
+<em>VAR_START_CLUSTER           = $60
+*
+</em>; / * Le numéro de cluster actuel du fichier actuel (la longueur totale est de 32 bits, octet de poids faible en premier) * /
+<em>VAR_CURRENT_CLUST           = $64
+*
+</em>; / * La longueur du fichier actuel (la longueur totale est de 32 bits, octet de poids faible en premier) * /
+<em>VAR_FILE_SIZE               = $68
+*
+</em>; / * Le pointeur de fichier actuel, le décalage d'octet de la position actuelle de lecture et d'écriture (longueur totale 32 bits, octet de poids faible en premier) * / 
+*VAR_CURRENT_OFFSET          = $6C</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2024-01-28
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
