@@ -7,7 +7,7 @@
 .export ch376_set_bytes_read
 .export ch376_set_bytes_write
 
-.import _ch376_wait_response
+.import ch376_wait_response
 
 
 
@@ -51,7 +51,7 @@ write_entry_point:
     sta     CH376_DATA
     sta     CH376_DATA
 .endif
-    jmp     _ch376_wait_response
+    jmp     ch376_wait_response
 .endproc
 
 
