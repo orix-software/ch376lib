@@ -3,7 +3,6 @@ OBJECTS8=$(SOURCES8:.s=.o)
 
 PATH_DEST=build/
 
-
 ifeq ($(CC65_HOME),)
         CC = cc65
         AS = ca65

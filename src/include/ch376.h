@@ -1,6 +1,7 @@
 #define CH376_LIB_VERSION_2023_4 0x00
 #define CH376_LIB_VERSION_2024_1 0x01
 #define CH376_LIB_VERSION_2024_2 0x02
+#define CH376_LIB_VERSION_2025_4 0x03
 
 /*/// "CH376 interface commands and constants" */
 
@@ -233,3 +234,6 @@ void          ch376_issue_token_x(unsigned char token);
 void          ch376_wr_usb_data(char *data);
 void          ch376_set_bytes_write(unsigned int nb);
 void          ch376_set_bytes_read(unsigned int nb);
+
+void          ch376_delay_100us();
+

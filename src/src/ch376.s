@@ -25,7 +25,7 @@
     lda     CH376_DATA
     sta     TR2
     lda     CH376_DATA
-    sta     TR3    
+    sta     TR3
     rts
 .endproc
 
@@ -33,22 +33,22 @@
     lda     #CH376_DISK_CAPACITY
     sta     CH376_COMMAND
     jsr     _ch376_wait_response
-    
+
     lda     #CH376_RD_USB_DATA0
     sta     CH376_COMMAND
-    
+
     lda     CH376_DATA ; total sector0
     sta     TR0 ; $5F
- 
+
     lda     CH376_DATA ; total sector1
     sta     TR1  ; $ED
- 
+
     lda     CH376_DATA ; total sector2
     sta     TR2 ; $92
-    
+
     lda     CH376_DATA ; total sector3
-    sta     TR3 ; $d8    
-    
+    sta     TR3 ; $d8
+
     rts
 .endproc
 
@@ -57,24 +57,24 @@
     sta     CH376_COMMAND
     jsr     _ch376_wait_response
     rts
-.endproc    
+.endproc
 
 ; A contains 0 if it needs to update length
 .proc _ch376_file_close
     ldx     #CH376_FILE_CLOSE
     stx     CH376_COMMAND
 .IFPC02
-.pc02    
+.pc02
     stz     CH376_DATA
-.p02    
+.p02
 .else
     lda     #$00
     sta     CH376_DATA
-.endif    
+.endif
     jsr     _ch376_wait_response
     rts
-.endproc    
-	
+.endproc
+
 ; [IN] AY : ptr
 .proc _ch376_seek_file
 
@@ -83,11 +83,11 @@
     sta     CH376_DATA
     sty     CH376_DATA
 .IFPC02
-.pc02      
+.pc02
     stz     CH376_DATA
     stz     CH376_DATA
 .p02    
-.else	
+.else
     lda     #$00
     sta     CH376_DATA
     sta     CH376_DATA
