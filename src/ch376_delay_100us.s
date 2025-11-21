@@ -2,9 +2,6 @@
 .include "include/ch376.inc"
 
 .export ch376_delay_100us
-.export _ch376_delay_100us
-
-_ch376_delay_100us := ch376_delay_100us
 
 .proc ch376_delay_100us
     ;;@brief Wait 100 us

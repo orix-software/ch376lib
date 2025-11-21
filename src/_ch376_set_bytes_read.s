@@ -7,9 +7,11 @@
 .import ch376_set_bytes_read
 .import ch376_set_bytes_write
 
+.import ch376_write_entry_point
+
 .proc _ch376_set_bytes_write
     ;;@proto void          ch376_set_bytes_write(unsigned int nb);
-    jmp     ch376_set_bytes_read::write_entry_point
+    jmp     ch376_write_entry_point
 .endproc
 
 .proc _ch376_set_bytes_read

@@ -22,6 +22,10 @@ Set bytes to read. Manage only 16 bits. Others bytes are set to 0 to provide 32 
 
 ---
 
+## ch376_write_entry_point
+
+---
+
 ## ch376_set_bytes_write
 
 ***Description***

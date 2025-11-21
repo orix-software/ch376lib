@@ -5,7 +5,7 @@
 .export ch376_set_bytes_write
 
 .import ch376_wait_response
-
+.export ch376_write_entry_point
 
 .proc ch376_set_bytes_read
     ;;@brief Set bytes to read. Manage only 16 bits. Others bytes are set to 0 to provide 32 bits integer to ch376 chip
@@ -20,8 +20,9 @@
     ;;@```
     ldx     #CH376_BYTE_READ
     .byt     $2C                ; jump 2 bytes with the hack bit $xxxx
+.endproc
 
-write_entry_point:
+.proc ch376_write_entry_point
     ldx     #CH376_BYTE_WRITE
     stx     CH376_COMMAND
     sta     CH376_DATA
@@ -53,5 +54,5 @@ write_entry_point:
     ;;@`  ldy       #$10
     ;;@`  jsr       ch376_set_bytes_write
     ;;@```
-    jmp     ch376_set_bytes_read::write_entry_point
+    jmp     ch376_write_entry_point
 .endproc
