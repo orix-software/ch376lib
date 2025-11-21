@@ -1,6 +1,6 @@
 [[bin]]
-name = "ch376lib"
-path_ch376lib = "tests/ch376.c"
+name = "ch376"
+path_ch376 = "tests/ch376.c"
 
 [package]
 name = "ch376lib"
