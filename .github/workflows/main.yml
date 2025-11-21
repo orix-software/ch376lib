@@ -207,5 +207,5 @@ jobs:
             export PATH=$PATH:../bpm/src/:${GITHUB_WORKSPACE}/cc65/bin
             echo branch ${{ github.ref_name }} $BRANCH_NAME
 
-            if [ "$BRANCH_NAME" = "main" ]; then bpm publish --official; else bpm publish --alpha; fi
+            if [ "$BRANCH_NAME" = "master" ]; then bpm publish --official; else bpm publish --alpha; fi
           fi
