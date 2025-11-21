@@ -6,6 +6,7 @@
 
 .export ch376_seek_file
 
+.import ch376_wait_response
 
 ; [IN] AY : ptr
 .proc ch376_seek_file
