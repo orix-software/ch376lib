@@ -1,5 +1,7 @@
 site_name: CH376 LIB 2025.4 DOCUMENTATION
 
+site_dir: ../docs/
+
 markdown_extensions:
 #     - pymdownx.highlight
 #     - pymdownx.inlinehilite
