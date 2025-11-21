@@ -1,6 +1,7 @@
 #define CH376_LIB_VERSION_2023_4 0x00
 #define CH376_LIB_VERSION_2024_1 0x01
 #define CH376_LIB_VERSION_2024_2 0x02
+#define CH376_LIB_VERSION_2025_4 0x03
 
 /*/// "CH376 interface commands and constants" */
 

@@ -28,7 +28,7 @@
     ;;@`...
     ;;@`  rts
     ;;@```
-    lda     #CH376_LIB_VERSION_2024_1
+    lda     #CH376_LIB_VERSION_2025_4
 
     rts
 .endproc

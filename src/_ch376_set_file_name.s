@@ -33,7 +33,7 @@
     ;;@```
 
     sta     RES
-    sty     RES+1
+    sty     RES + 1
 
 
     lda     #CH376_SET_FILE_NAME        ;$2F

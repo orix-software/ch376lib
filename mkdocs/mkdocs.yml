@@ -15,11 +15,11 @@ markdown_extensions:
 #     - md_in_html
     - admonition
 #     - pymdownx.details
-    - pymdownx.superfences:
-        custom_fences:
-          - name: mermaid
-            class: mermaid
-            format: !!python/name:pymdownx.superfences.fence_code_format
+    # - pymdownx.superfences:
+    #     custom_fences:
+    #       - name: mermaid
+    #         class: mermaid
+    #         format: !!python/name:pymdownx.superfences.fence_code_format
 #     - tables
 #     - pymdownx.emoji:
 #         emoji_index: !!python/name:materialx.emoji.twemoji
@@ -42,10 +42,9 @@ theme:
 nav:
     - Introduction: index.md
     - Versions:
-        - 2024.2:
-            - Assembly: 2024.2/index.md
-            - ch376.inc: 2024.2/ch376.inc.md
-            - C: 2024.2/c.md
+        - 2025.4:
+            - routines/functions: 2025.4/index.md
+
 
     # - Routines:
     #     - ch376_check_exist: api/ch376_check_exist.md

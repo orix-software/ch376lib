@@ -18,13 +18,13 @@
     ;;@note Not tested
     ;;@returns ch376 status values
     sta     ptr1
-    stx     ptr1+1
+    stx     ptr1 + 1
     jsr     popax
     sta     ptr2
     stx     RES
 
     lda     ptr1
-    ldy     ptr1+1
+    ldy     ptr1 + 1
     ldx     ptr2
 .endproc
 

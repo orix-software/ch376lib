@@ -2,25 +2,12 @@
 .include "include/ch376.inc"
 
 .export _ch376_set_usb_addr
-.export ch376_set_usb_addr
+.import ch376_set_usb_addr
 
 .proc _ch376_set_usb_addr
     ;;@proto void          ch376_set_usb_addr(unsigned char adress);
     ;;@brief set usb_address
+    jmp     ch376_set_usb_addr
 .endproc
 
-.proc ch376_set_usb_addr
-    ;;@brief set usb_address
-    ;;@inputA The address to set
-    ;;@modifyX
-    ;;@```ca65
-    ;;@`; Set usb addr
-    ;;@`  lda       #$02
-    ;;@`  jsr       ch376_set_usb_addr
-    ;;@`  rts
-    ;;@```
-    ldx     #CH376_SET_USB_ADDR
-    stx     CH376_COMMAND
-    sta     CH376_DATA
-    rts
-.endproc
+
