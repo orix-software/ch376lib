@@ -5,7 +5,7 @@
 .export ch376_set_bytes_write
 
 
-.export ch376_write_entry_point
+.import ch376_write_entry_point
 
 
 .proc ch376_set_bytes_write
