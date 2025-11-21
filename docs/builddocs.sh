@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir docs/code/$VERSION
 
 echo "# Assembly" > docs/code/assembly.md
 echo "" >> docs/code/assembly.md
@@ -15,7 +16,7 @@ echo "# C" > docs/code/$VERSION/c.md
 echo "" >> docs/code/$VERSION/c.md
 
 echo $VERSION
-mkdir docs/code/$VERSION
+
 for I in `ls src/*.s`; do
 cat  $I | python3 docs/ca65todoc.py >> docs/code/$VERSION/assembly.md
 cat  $I | python3 docs/ca65todoc_c_proto.py >> docs/code/$VERSION/c.md

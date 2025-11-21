@@ -17,7 +17,7 @@
     ;;@modifyA
     ;;@modifyY
     ;;@modifyX
-    ;;@modifyMEM_RES
+    ;;@modifyMEM_RES Used
     ;;@```ca65
     ;;@`  lda       #<data
     ;;@`  ldx       #>data

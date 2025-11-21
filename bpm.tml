@@ -1,0 +1,41 @@
+[[bin]]
+name = "ch376lib"
+path_ch376lib = "tests/ch376.c"
+
+[package]
+name = "ch376lib"
+version = "2025.4"
+authors = [ "jede",]
+license = ""
+edition = "2018"
+cpu = "6502"
+docsfolder = "mkdocs/docs/"
+readme = "README.md"
+repository = "https://github.com/orix-software/ch376lib"
+documentation = "https://orix-software.github.io/ch376lib/"
+description = "banking management https://orix-software.github.io/ch376lib/api/"
+homepage = "https://orix-software.github.io/ch376lib/"
+buildfolder = "build"
+packagetype = "tgz"
+codetype = "lib"
+templatecode = ""
+pathsrc = "src"
+oricutron_replace_autoboot_run = "True"
+asm_bin_tpl_version = "2024.4"
+asm_rom_tpl_version = "2024.4"
+orixsdk_version = "2023.3.0"
+default_github_action_version = "2024.4"
+default_generatedoc_version = "2025.4"
+orix_minimal_kernel_version = "2024.1"
+orix_run_pre_script = "scripts/starting.sub"
+md2hlp = "yes"
+enable_publish = "True"
+enable_build = "True"
+rom_compatible = "False"
+
+[dependencies]
+orixsdk = "2023.3"
+
+[dynamiclibs]
+
+[srcfolders]

@@ -233,3 +233,6 @@ void          ch376_issue_token_x(unsigned char token);
 void          ch376_wr_usb_data(char *data);
 void          ch376_set_bytes_write(unsigned int nb);
 void          ch376_set_bytes_read(unsigned int nb);
+
+void          ch376_delay_100us();
+

@@ -2,3 +2,5 @@
 build/
 ch376.lib
 target/
+bpmtmp/
+*.lib
