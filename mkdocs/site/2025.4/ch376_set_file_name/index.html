@@ -16,7 +16,7 @@
     
     
       
-        <title>ch376 set bytes read - CH376 LIB 2025.4 DOCUMENTATION</title>
+        <title>Ch376 set file name - CH376 LIB 2025.4 DOCUMENTATION</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#void-ch376_set_bytes_readunsigned-int-nb" class="md-skip">
+        <a href="#ch376_set_file_name" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-               ch376 set bytes read
+              Ch376 set file name
             
           </span>
         </div>
@@ -351,9 +351,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#void-ch376_set_bytes_readunsigned-int-nb" class="md-nav__link">
+  <a href="#ch376_set_file_name" class="md-nav__link">
     <span class="md-ellipsis">
-      void ch376_set_bytes_read(unsigned int nb);
+      ch376_set_file_name
     </span>
   </a>
   
@@ -375,9 +375,28 @@
 
 
 
-  <h1> ch376 set bytes read</h1>
+  <h1>Ch376 set file name</h1>
 
-<h2 id="void-ch376_set_bytes_readunsigned-int-nb">void ch376_set_bytes_read(unsigned int nb);</h2>
+<hr/>
+<h2 id="ch376_set_file_name">ch376_set_file_name</h2>
+<p><strong><em>Description</em></strong></p>
+<p>set file_name</p>
+<p><strong><em>Input</em></strong></p>
+<ul>
+<li>Accumulator : Low ptr adress of the string, terminated by 0</li>
+<li>Y Register : High ptr adress of the string, terminated by 0</li>
+</ul>
+<p><strong><em>Modify</em></strong></p>
+<ul>
+<li>RES</li>
+<li>Accumulator * Y Register 
+ lda #<myfile #="" ldy="">myfile
+ jsr ch376_set_file_name
+ rts
+myfile:
+ .byte "hello.txt"
+```</myfile></li>
+</ul>
 
 
 
