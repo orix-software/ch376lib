@@ -14,7 +14,7 @@
 * [unsigned char ch376_get_descr(unsigned char mode);](_ch376_get_descr.md)
 * [void ch376_get_file_size(void);](_ch376_get_file_size.md)
 * [unsigned char ch376_ic_get_version(void);](_ch376_ic_get_version.md)
-* [void ch376_issue_token_x(unsigned char token);](_ch376_issue_token_x.md)
+* [void ch376_issue_token_x(unsigned char control_transfert, unsigned char token);](_ch376_issue_token_x.md)
 * [unsigned char ch376_lib_version(void);](_ch376_lib_version.md)
 * [void ch376_reset_all(void);](_ch376_reset_all.md)
 * [unsigned int ch376_seek_file(long position);](_ch376_seek_file.md)

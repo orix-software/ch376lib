@@ -1,6 +1,3 @@
-.include "telestrat.inc"
-.include "include/ch376.inc"
-
 .export _ch376_ic_get_ver
 .import ch376_ic_get_ver
 

@@ -1,6 +1,3 @@
-.include "telestrat.inc"
-.include "include/ch376.inc"
-
 .export _ch376_set_register
 .import ch376_set_register
 

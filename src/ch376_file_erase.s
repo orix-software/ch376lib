@@ -6,7 +6,6 @@
 
 .export  ch376_file_erase
 
-
 .proc ch376_file_erase
     ;;@brief Erase file
     ;;@modifyA

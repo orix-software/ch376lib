@@ -1,9 +1,3 @@
-.include "telestrat.inc"
-.include "include/ch376.inc"
-
-
-
-
 .export _ch376_disk_query
 .import ch376_disk_query
 

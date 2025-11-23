@@ -1,6 +1,3 @@
-
-.include "include/ch376.inc"
-
 .import ch376_lib_version
 .export _ch376_lib_version
 
