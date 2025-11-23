@@ -230,10 +230,23 @@ void          ch376_set_config(unsigned char config);
 void          ch376_get_file_size(void);
 void          ch376_disk_query(void);
 void          ch376_disk_capacity();
-void          ch376_issue_token_x(unsigned char token);
+void          ch376_issue_token_x(unsigned char control_transfert, unsigned char token);
 void          ch376_wr_usb_data(char *data);
 void          ch376_set_bytes_write(unsigned int nb);
 void          ch376_set_bytes_read(unsigned int nb);
 
 void          ch376_delay_100us();
+
+// Since 2025.4
+
+struct rd_usb_data0 {
+    unsigned char x;
+    unsigned char y;
+    unsigned char wheel;
+    unsigned char button;
+};
+
+void          ch376_set_register(unsigned char registerid, unsigned char value);
+void          ch376_rd_usb_data0(struct rd_usb_data0 *rd_usb_data0_values);
+
 

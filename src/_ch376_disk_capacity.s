@@ -1,7 +1,3 @@
-
-.include "telestrat.inc"
-.include "include/ch376.inc"
-
 .import ch376_wait_response
 
 .export _ch376_disk_capacity

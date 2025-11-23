@@ -203,3 +203,11 @@ VAR_FILE_SIZE               = $68
 
 ; / * Le pointeur de fichier actuel, le décalage d'octet de la position actuelle de lecture et d'écriture (longueur totale 32 bits, octet de poids faible en premier) * / 
 VAR_CURRENT_OFFSET          = $6C
+
+
+.struct rd_usb_data0
+    xx .res 1
+    yy .res 1
+    wheel .res 1
+    button .res 1
+.endstruct

@@ -1,8 +1,4 @@
-.include "telestrat.inc"
-.include "include/ch376.inc"
-
 .export _ch376_delay_100us
-
 .import ch376_delay_100us
 
 .proc _ch376_delay_100us

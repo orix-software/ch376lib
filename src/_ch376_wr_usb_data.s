@@ -1,6 +1,3 @@
-.include "telestrat.inc"
-.include "include/ch376.inc"
-
 .export _ch376_wr_usb_data
 .import ch376_wr_usb_data
 

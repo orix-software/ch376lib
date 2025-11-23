@@ -1,7 +1,3 @@
-.include "telestrat.inc"
-.include "include/ch376.inc"
-
-
 .export  _ch376_file_erase
 .import  ch376_file_erase
 

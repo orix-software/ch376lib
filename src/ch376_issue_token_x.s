@@ -10,20 +10,21 @@
 .proc ch376_issue_token_x
     ;;@brief Send Token for control transfert
     ;;@inputA ch376 Token
+    ;;@inputA ch376 operation descriptor
     ;;@modifyA
     ;;@modifyX
     ;;@modifyY From ch376_wait_response
     ;;@returnsA ch376 status
     ;;@```ca65
     ;;@`  lda       #$80
+    ;;@`  ldx       #$19
     ;;@`  jsr       ch376_issue_token_x
+    ;;@`  rts
     ;;@`  ; check accumulator for ch376 status
     ;;@```
-    ldx     #CH376_ISSUE_TKN_X
-    stx     CH376_COMMAND
+    ldy     #CH376_ISSUE_TKN_X
+    sty     CH376_COMMAND
     sta     CH376_DATA
-    lda     #$0D
-    sta     CH376_DATA ; Control transfert
-
+    stx     CH376_DATA ; Control transfert
     jmp     ch376_wait_response
 .endproc
