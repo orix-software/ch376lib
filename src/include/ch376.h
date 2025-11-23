@@ -237,3 +237,5 @@ void          ch376_set_bytes_read(unsigned int nb);
 
 void          ch376_delay_100us();
 
+// Since 2025.4
+void          ch376_set_register(unsigned char registerid, unsigned char value);
