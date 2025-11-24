@@ -7,12 +7,13 @@
 
 .proc ch376_set_address
     ;;@brief set usb address
-    ;;@modifyX
+    ;;@modifyX Modified to set command
     ;;@returnA ch376 status
-    ;;@```ca65
+    ;;@```asm
     ;;@`  lda       #$02
     ;;@`  jsr       ch376_set_address
     ;;@`; Check A with ch376 status
+    ;;@`  rts
     ;;@```
     ldx     #CH376_SET_ADRESS
     stx     CH376_COMMAND

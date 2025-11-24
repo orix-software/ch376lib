@@ -13,7 +13,7 @@
     ;;@modifyX From ch376_wait_response_call
     ;;@modifyY From ch376_wait_response_call
     ;;@returnsA 'ch376 status' value
-    ;;@```ca65
+    ;;@```asm
     ;;@`  jsr       ch376_file_erase
     ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_file_open
     ;;@`  rts
