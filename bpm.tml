@@ -33,9 +33,9 @@ enable_publish = "True"
 enable_build = "True"
 rom_compatible = "False"
 lib = "True"
+web_doc_command = "mkdocs build"
 
 [dependencies]
-orixsdk = "2023.3"
 
 [dynamiclibs]
 

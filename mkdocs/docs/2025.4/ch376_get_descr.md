@@ -14,6 +14,9 @@ Get usb descr device
 
 * Accumulator : ch376 status values
 
+***Example***
+
+```asm
  jsr ch376_get_descr
  ; check accumulator here ch376_wait_response had been launched by ch376_get_descr
  rts

@@ -9,7 +9,7 @@
     ;;@brief If ch376 is present, it will return $AA
     ;;@modifyA
     ;;@returnsA $AA if it's OK
-    ;;@```ca65
+    ;;@```asm
     ;;@`  jsr       ch376_check_exist
     ;;@`  cmp       #$AA
     ;;@`  beq       @exists

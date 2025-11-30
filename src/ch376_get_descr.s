@@ -10,7 +10,7 @@
     ;;@modifyX
     ;;@modifyY From ch376_wait_response_call
     ;;@returnsA ch376 status values
-    ;;@```ca65
+    ;;@```asm
     ;;@`  jsr       ch376_get_descr
     ;;@`  ; check accumulator here ch376_wait_response had been launched by ch376_get_descr
     ;;@`  rts
