@@ -4,7 +4,7 @@
 
 * [unsigned char ch376_check_exist(void);](_ch376_check_exist.md)
 * [unsigned char ch376_dir_create();](_ch376_dir_create.md)
-* [ch376_disk_capacity();](_ch376_disk_capacity.md)
+* [void ch376_disk_capacity();](_ch376_disk_capacity.md)
 * [unsigned char ch376_disk_mount(void);](_ch376_disk_mount.md)
 * [void ch376_disk_query(void);](_ch376_disk_query.md)
 * [unsigned char ch376_file_close();](_ch376_file_close.md)

@@ -16,5 +16,6 @@ set usb address
  lda #$02
  jsr ch376_set_address
 ; Check A with ch376 status
+ rts
 ```
 
