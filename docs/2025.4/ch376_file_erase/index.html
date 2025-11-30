@@ -383,19 +383,18 @@
 <p>Erase file</p>
 <p><strong><em>Modify</em></strong></p>
 <ul>
-<li>
-<p>Accumulator * X Register From ch376_wait_response_call<em> Y Register From ch376_wait_response_call
-</em><strong>Returns</strong>*</p>
-</li>
-<li>
-<p>Accumulator : ch376 status value</p>
-</li>
+<li>Accumulator * X Register From ch376_wait_response_call* Y Register From ch376_wait_response_call</li>
 </ul>
-<p>jsr ch376_file_erase
+<p><strong><em>Returns</em></strong></p>
+<ul>
+<li>Accumulator : ch376 status value</li>
+</ul>
+<p><strong><em>Example</em></strong></p>
+<pre><code class="language-asm"> jsr ch376_file_erase
  ; Check accumulator here :
  ; Ch376_wait_response had been launched
  ; By ch376_file_erase
-```</p>
+</code></pre>
 
 
 

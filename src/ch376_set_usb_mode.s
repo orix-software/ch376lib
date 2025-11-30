@@ -9,7 +9,7 @@
     ;;@brief Set usb mode
     ;;@inputA The usb mode to set
     ;;@modifyX
-    ;;@```ca65
+    ;;@```asm
     ;;@`  lda       #CH376_USB_MODE_HOST_RESET
     ;;@`  jsr       ch376_set_usb_mode
     ;;@`  rts

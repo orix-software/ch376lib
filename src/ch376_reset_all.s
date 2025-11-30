@@ -10,7 +10,7 @@
     ;;@modifyA
     ;;@modifyX
     ;;@modifyY
-    ;;@```ca65
+    ;;@```asm
     ;;@`  jsr       ch376_reset_all
     ;;@`  rts
     ;;@```

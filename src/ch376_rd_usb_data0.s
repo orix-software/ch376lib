@@ -10,7 +10,7 @@
     ;;@returnsX X position
     ;;@returnsY Button
     ;;@returnsRES wheel
-    ;;@```ca65
+    ;;@```asm
     ;;@`  jsr       ch376_rd_usb_data0
     ;;@`  Read registers
     ;;@`  rts

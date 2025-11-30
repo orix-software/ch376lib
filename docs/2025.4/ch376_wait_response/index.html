@@ -383,17 +383,16 @@
 <p>Perform wait_response. It's not needed to call because some commands already perform ch376_wait_response</p>
 <p><strong><em>Modify</em></strong></p>
 <ul>
-<li>
-<p>Accumulator * X Register * Y Register 
-<strong><em>Returns</em></strong></p>
-</li>
-<li>
-<p>Accumulator : "ch376 status" value (or return 1 if usb controller does not respond)</p>
-</li>
+<li>Accumulator * X Register * Y Register </li>
 </ul>
-<p>jsr ch376_wait_response
+<p><strong><em>Returns</em></strong></p>
+<ul>
+<li>Accumulator : "ch376 status" value (or return 1 if usb controller does not respond)</li>
+</ul>
+<p><strong><em>Example</em></strong></p>
+<pre><code class="language-asm"> jsr ch376_wait_response
  rts
-```</p>
+</code></pre>
 
 
 

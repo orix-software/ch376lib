@@ -7,7 +7,7 @@
     ;;@brief Set usb mode
     ;;@inputA The speed for usb
     ;;@modifyX
-    ;;@```ca65
+    ;;@```asm
     ;;@`  lda       #$02
     ;;@`  jsr       ch376_set_usb_speed
     ;;@`  rts

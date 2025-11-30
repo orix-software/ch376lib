@@ -16,6 +16,9 @@ Send data to usb device. First byte must be the the length to send
 
 * Accumulator * Y Register * X Register * RESUsed
 
+***Example***
+
+```asm
  lda #<data
  ldx #>data
  jsr ch376_wr_usb_data

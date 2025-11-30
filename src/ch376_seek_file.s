@@ -19,7 +19,7 @@
     ;;@modifyX from ch376_wait_response call
     ;;@modifyY from ch376_wait_response call
     ;;@returnsA ch376 status values
-    ;;@```ca65
+    ;;@```asm
     ;;@`  lda       #$04
     ;;@`  sta       RES
     ;;@`  lda       #$01

@@ -15,6 +15,9 @@ Set register
 ***Modify***
 
 * Accumulator 
+***Example***
+
+```asm
  lda #$0B
  ldx #$17
  ldy #$D8

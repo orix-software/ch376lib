@@ -390,22 +390,21 @@
 </ul>
 <p><strong><em>Modify</em></strong></p>
 <ul>
-<li>
-<p>Accumulator * X Register from ch376_wait_response call<em> Y Register from ch376_wait_response call
-</em><strong>Returns</strong>*</p>
-</li>
-<li>
-<p>Accumulator : ch376 status values</p>
-</li>
+<li>Accumulator * X Register from ch376_wait_response call* Y Register from ch376_wait_response call</li>
 </ul>
-<p>lda #$04
+<p><strong><em>Returns</em></strong></p>
+<ul>
+<li>Accumulator : ch376 status values</li>
+</ul>
+<p><strong><em>Example</em></strong></p>
+<pre><code class="language-asm"> lda #$04
  sta RES
  lda #$01
  ldy #$02
  ldx #$03
  jsr ch376_seek_file
  ; check accumulator here ch376_wait_response had been launched by ch376_seek_file
-```</p>
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Not tested</p>
 </div>

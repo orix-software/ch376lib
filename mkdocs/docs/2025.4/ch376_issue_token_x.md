@@ -15,10 +15,14 @@ Send Token for control transfert
 ***Modify***
 
 * Accumulator * X Register * Y Register From ch376_wait_response
+
 ***Returns***
 
 * Accumulator : ch376 status
 
+***Example***
+
+```asm
  lda #$80
  ldx #$19
  jsr ch376_issue_token_x

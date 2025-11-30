@@ -9,7 +9,7 @@
     ;;@brief Get ch376 firmware version
     ;;@modifyA
     ;;@returnsA ch376 firmware version
-    ;;@```ca65
+    ;;@```asm
     ;;@`  jsr       ch376_ic_get_ver
     ;;@`  ; check accumulator for Version (integer value)
     ;;@```

@@ -383,15 +383,14 @@
 <p>Get lib version</p>
 <p><strong><em>Modify</em></strong></p>
 <ul>
-<li>
-<p>Accumulator 
-<strong><em>Returns</em></strong></p>
-</li>
-<li>
-<p>Accumulator : ch376 lib version</p>
-</li>
+<li>Accumulator </li>
 </ul>
-<p>jsr ch376_lib_version
+<p><strong><em>Returns</em></strong></p>
+<ul>
+<li>Accumulator : ch376 lib version</li>
+</ul>
+<p><strong><em>Example</em></strong></p>
+<pre><code class="language-asm"> jsr ch376_lib_version
  cmp #CH376_LIB_VERSION_2024_2
  beq @right_version
  ; Wrong version
@@ -400,7 +399,7 @@
 @right_version:
 ...
  rts
-```</p>
+</code></pre>
 
 
 

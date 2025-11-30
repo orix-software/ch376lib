@@ -388,20 +388,19 @@
 </ul>
 <p><strong><em>Modify</em></strong></p>
 <ul>
-<li>
-<p>Accumulator * X Register * Y Register From ch376_wait_response
-<strong><em>Returns</em></strong></p>
-</li>
-<li>
-<p>Accumulator : ch376 status</p>
-</li>
+<li>Accumulator * X Register * Y Register From ch376_wait_response</li>
 </ul>
-<p>lda #$80
+<p><strong><em>Returns</em></strong></p>
+<ul>
+<li>Accumulator : ch376 status</li>
+</ul>
+<p><strong><em>Example</em></strong></p>
+<pre><code class="language-asm"> lda #$80
  ldx #$19
  jsr ch376_issue_token_x
  rts
  ; check accumulator for ch376 status
-```</p>
+</code></pre>
 
 
 
