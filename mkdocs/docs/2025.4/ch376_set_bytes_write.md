@@ -15,6 +15,9 @@ Set bytes to write. Manage only 16 bits. Others bytes are set to 0 to provide 32
 ***Modify***
 
 * X Register * Accumulator 
+***Example***
+
+```asm
  lda #$02
  ldy #$10
  jsr ch376_set_bytes_write

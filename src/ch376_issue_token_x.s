@@ -15,7 +15,7 @@
     ;;@modifyX
     ;;@modifyY From ch376_wait_response
     ;;@returnsA ch376 status
-    ;;@```ca65
+    ;;@```asm
     ;;@`  lda       #$80
     ;;@`  ldx       #$19
     ;;@`  jsr       ch376_issue_token_x

@@ -16,10 +16,14 @@ Seek file. Performs a wait_response
 ***Modify***
 
 * Accumulator * X Register from ch376_wait_response call* Y Register from ch376_wait_response call
+
 ***Returns***
 
 * Accumulator : ch376 status values
 
+***Example***
+
+```asm
  lda #$04
  sta RES
  lda #$01

@@ -390,13 +390,15 @@
 <ul>
 <li>Accumulator * Y Register * X Register * RESUsed</li>
 </ul>
-<p>lda #<data #="" ldx="">data
+<p><strong><em>Example</em></strong></p>
+<pre><code class="language-asm"> lda #&lt;data
+ ldx #&gt;data
  jsr ch376_wr_usb_data
  rts
 data:
  ; length, set port feature, set feature, port_power,0, Id port, 0, 0, 0
  .byte 8,$23,3,8,0,1,0,0
-```</data></p>
+</code></pre>
 
 
 

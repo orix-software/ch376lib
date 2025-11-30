@@ -14,6 +14,9 @@ set usb_address
 ***Modify***
 
 * X Register 
+***Example***
+
+```asm
 ; Set usb addr
  lda #$02
  jsr ch376_set_usb_addr

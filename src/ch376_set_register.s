@@ -8,7 +8,7 @@
     ;;@inputX The id of the register. ex VAR_SYS_BASE_INFO
     ;;@inputY The value of the register
     ;;@modifyA
-    ;;@```ca65
+    ;;@```asm
     ;;@`  lda       #$0B
     ;;@`  ldx       #$17
     ;;@`  ldy       #$D8

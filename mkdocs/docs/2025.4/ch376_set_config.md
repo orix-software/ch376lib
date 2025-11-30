@@ -14,6 +14,9 @@ set config for usb device
 ***Modify***
 
 * X Register 
+***Example***
+
+```asm
  lda #$02
  jsr ch376_set_config
 ```

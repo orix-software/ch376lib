@@ -14,7 +14,7 @@
     ;;@modifyMEM_RES
     ;;@modifyA
     ;;@modifyY
-    ;;@```ca65
+    ;;@```asm
     ;;@`  lda       #<myfile
     ;;@`  ldy       #>myfile
     ;;@`  jsr       ch376_set_file_name

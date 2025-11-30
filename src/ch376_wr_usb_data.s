@@ -11,7 +11,7 @@
     ;;@modifyY
     ;;@modifyX
     ;;@modifyMEM_RES Used
-    ;;@```ca65
+    ;;@```asm
     ;;@`  lda       #<data
     ;;@`  ldx       #>data
     ;;@`  jsr       ch376_wr_usb_data

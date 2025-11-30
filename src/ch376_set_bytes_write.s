@@ -14,7 +14,7 @@
     ;;@inputY       High value
     ;;@modifyX
     ;;@modifyA
-    ;;@```ca65
+    ;;@```asm
     ;;@`  lda       #$02
     ;;@`  ldy       #$10
     ;;@`  jsr       ch376_set_bytes_write

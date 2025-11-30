@@ -16,6 +16,9 @@ set file_name
 
 * RES
 * Accumulator * Y Register 
+***Example***
+
+```asm
  lda #<myfile
  ldy #>myfile
  jsr ch376_set_file_name

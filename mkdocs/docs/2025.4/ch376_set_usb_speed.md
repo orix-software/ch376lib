@@ -14,6 +14,9 @@ Set usb mode
 ***Modify***
 
 * X Register 
+***Example***
+
+```asm
  lda #$02
  jsr ch376_set_usb_speed
  rts
